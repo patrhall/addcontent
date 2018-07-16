@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Aimit_Aim" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.0.3;Initial Catalog=Aimit_Aim;Persist Security Info=True;User ID=Aimit_Aim" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="Aimit_AimConnectionString3" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AlbumPhoto" Member="AlbumPhotos">
+    <Type Name="AlbumPhoto">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Filename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhotoCategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="AlbumPhotoCategory_AlbumPhoto" Member="AlbumPhotoCategory" ThisKey="PhotoCategoryID" Type="AlbumPhotoCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AlbumPhotoInRoles" Member="AlbumPhotoInRoles">
+    <Type Name="AlbumPhotoInRole">
+      <Column Name="PhotoCategoryId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="AlbumPhotoCategory_AlbumPhotoInRole" Member="AlbumPhotoCategory" ThisKey="PhotoCategoryId" Type="AlbumPhotoCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AlbumPhotoCategory" Member="AlbumPhotoCategories">
+    <Type Name="AlbumPhotoCategory">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ObjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CategoryComment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AlbumCover" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AlbumPhotoCategory_AlbumPhoto" Member="AlbumPhotos" OtherKey="PhotoCategoryID" Type="AlbumPhoto" />
+      <Association Name="AlbumPhotoCategory_AlbumPhotoInRole" Member="AlbumPhotoInRoles" OtherKey="PhotoCategoryId" Type="AlbumPhotoInRole" />
+    </Type>
+  </Table>
+  <Function Name="dbo.usp_AlbumPhoto_DeleteCategories" Method="usp_AlbumPhoto_DeleteCategories">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_UpdateComment" Method="usp_AlbumPhoto_UpdateComment">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Comment" Parameter="comment" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_DeleteItem" Method="usp_AlbumPhoto_DeleteItem">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_DeleteRoles" Method="usp_AlbumPhoto_DeleteRoles">
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleName" Parameter="roleName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ApplicationName" Parameter="applicationName" Type="System.String" DbType="NVarChar(256)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_GetCategories" Method="usp_AlbumPhoto_GetCategories">
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="usp_AlbumPhoto_GetCategoriesResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CategoryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CategoryComment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AlbumCover" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_GetCategoryInfo" Method="usp_AlbumPhoto_GetCategoryInfo">
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_AlbumPhoto_GetCategoryInfoResult">
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CategoryComment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AlbumCover" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_GetCategoryItems" Method="usp_AlbumPhoto_GetCategoryItems">
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="usp_AlbumPhoto_GetCategoryItemsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Filename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CategoryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AlbumCover" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_GetItem" Method="usp_AlbumPhoto_GetItem">
+    <Parameter Name="ItemID" Parameter="itemID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="usp_AlbumPhoto_GetItemResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Filename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AlbumCover" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_GetNextItem" Method="usp_AlbumPhoto_GetNextItem">
+    <Parameter Name="ItemId" Parameter="itemId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_AlbumPhoto_GetNextItemResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_GetPreviousItem" Method="usp_AlbumPhoto_GetPreviousItem">
+    <Parameter Name="ItemId" Parameter="itemId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_AlbumPhoto_GetPreviousItemResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_GetRoles" Method="usp_AlbumPhoto_GetRoles">
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_AlbumPhoto_GetRolesResult">
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_SaveCategory" Method="usp_AlbumPhoto_SaveCategory">
+    <Parameter Name="CategoryName" Parameter="categoryName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="CategoryDate" Parameter="categoryDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CategoryComment" Parameter="categoryComment" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="usp_AlbumPhoto_SaveCategoryResult">
+      <Column Name="Column1" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_SaveItem" Method="usp_AlbumPhoto_SaveItem">
+    <Parameter Name="Filename" Parameter="filename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PhotoCategoryID" Parameter="photoCategoryID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_Search" Method="usp_AlbumPhoto_Search">
+    <Parameter Name="SearchText" Parameter="searchText" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="usp_AlbumPhoto_SearchResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Filename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AlbumCover" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_SearchCategories" Method="usp_AlbumPhoto_SearchCategories">
+    <Parameter Name="SearchText" Parameter="searchText" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="usp_AlbumPhoto_SearchCategoriesResult">
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AlbumCover" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_SearchComments" Method="usp_AlbumPhoto_SearchComments">
+    <Parameter Name="SearchText" Parameter="searchText" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="usp_AlbumPhoto_SearchCommentsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Filename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AlbumCover" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_SetRoles" Method="usp_AlbumPhoto_SetRoles">
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleName" Parameter="roleName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ApplicationName" Parameter="applicationName" Type="System.String" DbType="NVarChar(256)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_SwitchPicture" Method="usp_AlbumPhoto_SwitchPicture">
+    <Parameter Name="Pic_up" Parameter="pic_up" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pic_down" Parameter="pic_down" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_AlbumPhoto_UpdateCategoryComment" Method="usp_AlbumPhoto_UpdateCategoryComment">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CategoryName" Parameter="categoryName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="CategoryComment" Parameter="categoryComment" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="AlbumCover" Parameter="albumCover" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

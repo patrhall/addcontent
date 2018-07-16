@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <pageTitle value="Forgot your password?" />
+  <lblTitle value="User information recovery" />
+  <lblContent value="Type your email adress below and click send to have your username and password sent to your email account." />
+  <btSend value="Send" />
+  <mailTitle value="AimContent - user information" />
+  <mailContent value="This email was delivered automatically. You received this because somebody has requested that your AimContent user information should be sent to you. If you received this without requesting the information, please ignore this email" />
+  <site value="Login for: " />
+  <username value="username: " />
+  <password value="password: " />
+  <lblMsg value="An email has been sent to the stated email adress." />
+</language>

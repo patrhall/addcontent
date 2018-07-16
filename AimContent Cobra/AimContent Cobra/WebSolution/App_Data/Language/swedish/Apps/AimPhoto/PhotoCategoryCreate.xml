@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Bildarkiv - skapa kategori" />
+  <contentdescription value="Här kan du skapa ett album. Lämna datumfältet fritt för att spara albumet med dagens datum. När du sparar så vidarebefodras du till bilduppladdningssidan." />
+  <lblDate value="Datum:" />
+  <lblCategory value="Namn:"  />
+  <lblComment value="Kommentar:" />
+  <btCategoryName value="Spara" />
+  <lblMsg value="Du måste ange ett namn på kategorien" />
+  <hpBack value="&lt;img border='o' src='/Images/arrow_left_grey.gif' title='Gå tillbaka' alt='Gå tillbaka' /&gt;" />
+</language>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Edit page" />
+  <contentdescription value="Here you can edit the content of the page. If you wish to edit settings for the page, for example title or who will be able to view the page you click page settings." />
+  <lbPreference value="Edit page settings" />
+  <bRoleConfirm value="Save" />
+  <lblPreview value="Preview" />
+</language>

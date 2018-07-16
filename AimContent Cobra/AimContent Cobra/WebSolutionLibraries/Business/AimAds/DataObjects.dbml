@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Aimit_OIS" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_OIS;Integrated Security=True" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="Aimit_OISConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AimAds_Directions" Member="AimAds_Directions">
+    <Type Name="AimAds_Direction">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="AimAds_Direction_AimAds_Group" Member="AimAds_Groups" OtherKey="AimAds_Direction_FK" Type="AimAds_Group" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimAds_Group" Member="AimAds_Groups">
+    <Type Name="AimAds_Group">
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Site_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="ShortName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="AllowScripts" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AimAds_Direction_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StyleOverallClassName" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="StyleItemClassName" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="StyleLinkClassName" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="AimAds_Group_AimAds_Item" Member="AimAds_Items" OtherKey="AimAds_Group_FK" Type="AimAds_Item" />
+      <Association Name="AimAds_Direction_AimAds_Group" Member="AimAds_Direction" ThisKey="AimAds_Direction_FK" Type="AimAds_Direction" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimAds_Item" Member="AimAds_Items">
+    <Type Name="AimAds_Item">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Href" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="ImageFilename" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="AimAds_Group_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LinkTarget" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Show" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PublishFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PublishTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ScriptCode" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Border" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="AimAds_Group_AimAds_Item" Member="AimAds_Group" ThisKey="AimAds_Group_FK" Type="AimAds_Group" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

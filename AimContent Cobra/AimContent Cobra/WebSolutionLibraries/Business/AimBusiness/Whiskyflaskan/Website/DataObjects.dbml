@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AimContent_RevisorsRingen" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=aimit1;Initial Catalog=AimContent_RevisorsRingen;Persist Security Info=True;User ID=sa" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="AimContent_RevisorsRingenConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.usp_CalendarR_Save_Hatch" Method="usp_CalendarR_Save_Hatch">
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CID" Parameter="cID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HatchNo" Parameter="hatchNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Html" Parameter="html" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Date" Parameter="date" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="usp_CalendarR_Save_HatchResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_CalendarR_Get_Calendar" Method="usp_CalendarR_Get_Calendar">
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SiteID" Parameter="siteID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_CalendarR_Get_CalendarResult">
+      <Column Name="CID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ObjectID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="bgColor" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_CalendarR_Get_Hatches" Method="usp_CalendarR_Get_Hatches">
+    <Parameter Name="CID" Parameter="cID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_CalendarR_Get_HatchesResult">
+      <Column Name="LID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HatchNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Html" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_CalendarR_Get_SpecificHatch" Method="usp_CalendarR_Get_SpecificHatch">
+    <Parameter Name="LID" Parameter="lID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_CalendarR_Get_SpecificHatchResult">
+      <Column Name="LID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HatchNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Html" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_CalendarR_Save" Method="usp_CalendarR_Save">
+    <Parameter Name="CID" Parameter="cID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="Picture" Parameter="picture" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="SiteID" Parameter="siteID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Text" Parameter="text" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="bgColor" Type="System.String" DbType="NVarChar(7)" />
+    <Parameter Name="Message" Parameter="message" Type="System.String" DbType="NVarChar(250)" />
+    <ElementType Name="usp_CalendarR_SaveResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebSolution.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>AimContent - Aimit Solutions AB</title>
+    <link rel="Stylesheet" type="text/css" href="~/css/Structure.css" />
+    <link rel="Stylesheet" type="text/css" href="/css/General.css" />
+    
+    <meta http-equiv="Page-Exit" content="progid:DXImageTransform.Microsoft.Fade(duration=0)" />
+    <meta name="description" content="Aimits administrationsverktyg för webben" />
+    <meta name="keywords" content="" />
+    
+    <style type="text/css">
+        img, div { behavior: url(/iepngfix/iepngfix.htc) }    
+    </style>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>   
+</head>
+<body>
+    <form id="form2" runat="server">  
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />    
+    <div id="masterpage_div_site">               
+        <rad:RadSplitter ID="rs_Page" runat="server" Width="100%" FullScreenMode="true" Orientation="Horizontal" Skin="Default">
+            <rad:RadPane id="rp_Top" runat="server" MinHeight="63" Height="63px">
+                <div id="masterpage_div_top">
+                    <table id="masterpage_table_top">
+                        <tr id="masterpage_tr_top">
+                            <td id="masterpage_td_topleft"><a href="/" style="font-size:22px;font-weight:bold;color:White;">AimContent</a></td>
+                            <td id="masterpage_td_topright">
+                                <table id="masterpage_table_topinfo" cellpadding="0" cellspacing="0">
+                                    <tr> 
+                                        <td id="tdSiteStyle" runat="server" class="masterpage_td_topinfoicons"><a href="/SiteStyleSetting.aspx"><img src="/Images/structure/css.png" alt="" /></a></td>                                       
+                                        <td class="masterpage_td_topinfoicons"><a href="/SitePreference.aspx"><img src="/Images/structure/tools.png" alt="" /></a></td>
+                                        <td class="masterpage_td_topinfoicons"><!--<a href="/Help.aspx"><img src="/Images/structure/help.png" alt="" /></a>--></td>
+                                        <td id="masterpage_td_topinfo_left"><img src="/Images/structure/topbox_left.png" alt="" /></td>
+                                        <td id="masterpage_td_topinfo">                                            
+                                            <asp:Label ID="lblAdminUserName" runat="server" /><br />
+                                            <asp:Label ID="lblSiteName" runat="server" />                                            
+                                        </td>
+                                        <td id="masterpage_td_topinfo_right"><img src="/Images/structure/topbox_right.png" alt="" /></td>
+                                        <td class="masterpage_td_topinfoicons"><asp:ImageButton ID="ibLogout" runat="server" OnClick="ibLogout_OnClick" ImageUrl="/Images/structure/logout.png" AlternateText="Logout" /></td>
+                                    </tr>
+                                </table>                        
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </div>   
+            </rad:RadPane>                
+            <rad:RadPane id="rp_Body" runat="server">   
+                <rad:RadSplitter id="rs_Content" runat="server" width="100%" Orientation="Vertical" Skin="Default">
+                    <rad:RadPane id="rp_Menu" runat="server" scrolling="Both" Width="245px">
+                        <div id="masterpage_div_moduledropdown">                            
+                            <rad:RadComboBox ID="ddModules" runat="server" Width="230px"  Skin="Vista"  
+                                MarkFirstMatch="false" HighlightTemplatedItems="True" ShowToggleImage="True" 
+                                AllowCustomText="false" EnableLoadOnDemand="false" AutoPostBack="true" 
+                                onselectedindexchanged="ddModules_SelectedIndexChanged">
+                                <ItemTemplate>
+                                    <table class="masterpage_ddModules_table">
+                                        <tr>
+                                            <td class="masterpage_ddModules_img">
+                                                <img src='<%# DataBinder.Eval(Container, "Attributes['ImagePath']") %>' height="21px" alt="<%# DataBinder.Eval(Container, "Text") %>" />
+                                            </td>
+                                            <td class="masterpage_ddModules_text">
+                                                <%# DataBinder.Eval(Container, "Text") %>
+                                            </td>
+                                        </tr>                                                                                
+                                    </table>
+                                </ItemTemplate>                    
+                            </rad:RadComboBox>
+                        </div>
+                        <div id="masterpage_div_menu">                            
+                            <asp:PlaceHolder ID="phMenu" runat="server" />
+                        </div>
+                    </rad:RadPane>
+                    <rad:RadSplitBar id="rsSplit" runat="server" CollapseMode="Forward" CollapseExpandPaneText="" />
+                    <rad:RadPane id="rp_Content" runat="server">                        
+                        <div id="masterpage_div_content">
+                            <p id="masterpage_p_contenttitle"><asp:Label ID="lblContentTitle" CssClass="bigtitle" runat="server" /></p>
+                            <p id="masterpage_p_contentdescription"><asp:Label ID="lblContentDescription" runat="server" /></p>
+                            <asp:contentplaceholder id="cphDefault" runat="server" />                              
+                        </div>
+                    </rad:RadPane>   
+                </rad:RadSplitter> 
+            </rad:RadPane>                
+        </rad:RadSplitter>                           
+    </div>
+    </form>
+</body>
+</html>
+

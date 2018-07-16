@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Aimit_OIS" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_OIS;Integrated Security=True" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="Aimit_OISConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Calendar" Member="Calendars">
+    <Type Name="Calendar">
+      <Column Name="CalendarID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Titel" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="CalendarGroupID_FK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Show" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isMarked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Association Name="Calendar_CalendarTroopConnection" Member="CalendarTroopConnections" OtherKey="CalendarID_FK" Type="CalendarTroopConnection" />
+      <Association Name="CalendarGroup_Calendar" Member="CalendarGroup" ThisKey="CalendarGroupID_FK" Type="CalendarGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CalendarGroups" Member="CalendarGroups">
+    <Type Name="CalendarGroup">
+      <Column Name="CalendarGroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteID_FK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="CalendarGroup_Calendar" Member="Calendars" OtherKey="CalendarGroupID_FK" Type="Calendar" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CalendarTroopConnection" Member="CalendarTroopConnections">
+    <Type Name="CalendarTroopConnection">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CalendarID_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TroopID_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Calendar_CalendarTroopConnection" Member="Calendar" ThisKey="CalendarID_FK" Type="Calendar" IsForeignKey="true" />
+      <Association Name="Ois_Troop_CalendarTroopConnection" Member="Ois_Troop" ThisKey="TroopID_FK" Type="Ois_Troop" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ois_Troop" Member="Ois_Troops">
+    <Type Name="Ois_Troop">
+      <Column Name="TroopID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Ois_Troop_CalendarTroopConnection" Member="CalendarTroopConnections" OtherKey="TroopID_FK" Type="CalendarTroopConnection" />
+    </Type>
+  </Table>
+</Database>

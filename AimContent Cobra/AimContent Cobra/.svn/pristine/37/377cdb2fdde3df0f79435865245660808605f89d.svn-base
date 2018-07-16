@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+	<contenttitle value="AimContent" />
+	<contentdescription value="An error has occured on the page you tried to visit. Probable reasons to this error could be that you don't have access to the page or that you have used a broken link." />
+	<lblDate value="If you suspect that the page doesn't work correct, we beg you to report this in the support form at &lt;a href='http://www.aimit.se' target='_blank'&gt;Aimits hemsida&lt;/a&gt;. Please provide us with the time when the error occured: " />
+</language>

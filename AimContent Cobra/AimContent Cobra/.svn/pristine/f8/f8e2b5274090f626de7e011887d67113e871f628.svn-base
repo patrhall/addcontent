@@ -1,0 +1,143 @@
+﻿/* THIS CSS I USED ONLY FOR STRUCTURE ID:s AND TAGS, I.E STYLES FOR SPECIFIC DIVS, SPAN, ETC */
+html, body, form
+{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+body
+{
+	background-color:White;	
+}
+
+#masterpage_div_site
+{		
+	height:100%;
+}
+
+#masterpage_div_top
+{	
+	width:100%;
+	margin:0 0 0 0 ;
+	padding:0 0 0 0;
+}
+
+#masterpage_table_top
+{
+	width:100%;
+	background-image:url('/Images/structure/topbar.jpg');
+	background-repeat:repeat-x;
+	margin:0 0 0 0 ;
+	padding:0 0 0 0;
+	height:63px;
+}
+
+#masterpage_tr_top
+{
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+	width:100%;
+}
+
+#masterpage_td_topleft
+{
+	text-align:left;
+	background-image:url('/Images/structure/tree.jpg');
+	background-repeat:no-repeat;
+	
+	width:300px;		
+		
+	
+	padding:0 0 0 80px;
+}
+
+#masterpage_td_topright
+{
+	text-align:right;	
+	padding:0 5px 0 5px;	
+	float:right;		
+}
+
+#masterpage_table_topinfo
+{
+	height:45px;
+	border-width:0px;
+	
+	margin:0px;
+}
+
+#masterpage_td_topinfo
+{
+	background-color:White;
+	text-align:left;
+	padding:0;
+	height:45px;
+}
+
+.masterpage_td_topinfoicons
+{
+	padding-right:7px;
+	padding-left:7px;
+}
+
+#masterpage_td_topinfo_left
+{
+	height:45px;
+	
+	padding-right:0px;
+	padding-left:5px;
+}
+
+#masterpage_td_topinfo_right
+{
+	height:45px;
+	
+	padding-right:5px;
+	padding-left:0px;		
+}
+
+#masterpage_div_moduledropdown
+{
+}
+
+.masterpage_ddModules_table
+{
+	width:100%;
+	cursor:pointer;
+}
+
+.masterpage_ddModules_img
+{
+	width:30px;
+}
+
+.masterpage_ddModules_text
+{
+	vertical-align:middle;
+	
+	font-size:12px;
+	font-weight:bold;
+}
+
+#masterpage_div_menu
+{
+}
+
+#masterpage_div_content
+{
+	padding:5px 5px 20px 5px;
+}
+
+#masterpage_p_contenttitle
+{
+	padding:0 0 7px 0;
+	margin:0 0 0 0;
+}
+
+#masterpage_p_contentdescription
+{
+	padding:0 0 7px 0;
+	margin:0 0 0 0;
+}

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Inställningar för webbplatsen" />
+  <contentdescription value="Här kan du administrera inställningar som gäller hela sajten, samt se förinställningar." />
+
+  <lblMetaHeadTitle value="Beskrivning av hemsidan" />
+  <lblMetaHeadDescription value="Dessa inställningar är en spegling av beskrivningarna av startsidan. Om du inte anger en beskrivning på en enskild undersida så kommer dessa att visas istället." />
+  <lblMetaTitle value="Sidans titel (visas i webbläsarens titelrad):" />
+  <lblMetaKeywords value="Nyckelord (för sökmotorer), separera med komma:" />
+  <lblMetaDescription value="Kort beskrivning (för sökmotorer):" />
+  
+  
+  <lblPrePreferenceTitle value="Förinställningar" />
+  <lblPrePreferenceDescription value="Här finner du en överblick över inställningar gjorda när webbsidan konfigurerades. Dessa går ej att ändra på." />
+  <lblPrePreferenceSiteUrl value="Hemsideadress" />
+  <lblPrePreferenceMaxFilesize value="Max filstorlek vid uppladdning" />
+  <lblPrePreferenceLcid value="Kulturinställning" />
+  <lblPrePreferenceUseAdminRoles value="Behörighetsstyrda administratörsroller" />
+  <lblPrePreferenceSecureEditing value="Inloggning för filåtkomst" />
+  <lblPrePreferenceLiveStat value="Statistik" />
+  <lblPrePreferenceID value="Unikt ID för webbplatsen" />
+
+  <lblPrePreferenceLiveStatValue_true value="Länk (öppnas i nytt fönster)" />
+  <lblPrePreferenceLiveStatValue_false value="Ej aktiverat" />
+
+  <btMetaSave value="Spara" />
+  <lblMetaMessage value="Beskrivningen är uppdaterad" />
+  
+  <btSaveAdminRoles value="Spara" />
+  <lblAdminRolesTitle value="Rättigheter i administrationen" />
+  <lblAdminRolesDescription value="Här administreras vilka administratörsrättigheter som har tillgång till respektive avdelning. Superadmin har alltid åtkomst till allt." />
+ 
+  <module1 value="Sidredigering" />
+  <module2 value="Administratörer" />
+    <module18 value="Annonser" />
+
+  <no value="Nej" />
+  <yes value="Ja" />
+</language>

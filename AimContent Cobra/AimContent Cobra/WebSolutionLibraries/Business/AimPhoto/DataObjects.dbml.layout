@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataObjects">
+  <DataContextMoniker Name="/DataObjectsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8f90d3a9-4cdb-4e09-8564-9c0874f164c8" absoluteBounds="3.5, 3, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DataObjectsDataContext/AlbumPhoto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c658441-4ba9-4a9e-8031-3de2f0333105" absoluteBounds="3.515, 3.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="92f0e980-9015-43f7-bf64-98ff7212b638" absoluteBounds="3.5, 1, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/DataObjectsDataContext/AlbumPhotoInRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ef28da5-3b37-4538-9683-635da5221a0e" absoluteBounds="3.515, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d084b5cd-d1d2-4aa4-a93a-761112384198" absoluteBounds="0.75, 1.875, 2, 2.1554996744791661">
+      <DataClassMoniker Name="/DataObjectsDataContext/AlbumPhotoCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba15194c-80c9-4021-9dd0-9800fd887b0e" absoluteBounds="0.765, 2.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.51524983723958); (3.5 : 3.51524983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataObjectsDataContext/AlbumPhotoCategory/AlbumPhotoCategory_AlbumPhoto" />
+      <nodes>
+        <classShapeMoniker Id="d084b5cd-d1d2-4aa4-a93a-761112384198" />
+        <classShapeMoniker Id="8f90d3a9-4cdb-4e09-8564-9c0874f164c8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 1.875); (1.75 : 1.4374995); (3.5 : 1.4374995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataObjectsDataContext/AlbumPhotoCategory/AlbumPhotoCategory_AlbumPhotoInRole" />
+      <nodes>
+        <classShapeMoniker Id="d084b5cd-d1d2-4aa4-a93a-761112384198" />
+        <classShapeMoniker Id="92f0e980-9015-43f7-bf64-98ff7212b638" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

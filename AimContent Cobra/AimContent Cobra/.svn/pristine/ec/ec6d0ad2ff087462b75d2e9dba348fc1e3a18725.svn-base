@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Debug</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AimEdit.dll">
+      <publishTime>11/26/2012 16:56:39</publishTime>
+    </File>
+    <File Include="bin/AimEdit.pdb">
+      <publishTime>11/26/2012 16:56:39</publishTime>
+    </File>
+    <File Include="bin/AimResources.dll">
+      <publishTime>11/15/2012 17:28:03</publishTime>
+    </File>
+    <File Include="bin/Business.dll">
+      <publishTime>11/26/2012 16:56:27</publishTime>
+    </File>
+    <File Include="bin/Business.pdb">
+      <publishTime>11/26/2012 16:56:26</publishTime>
+    </File>
+    <File Include="bin/ephtmltopdf.dll">
+      <publishTime>05/09/2008 13:10:00</publishTime>
+    </File>
+    <File Include="bin/General.dll">
+      <publishTime>11/26/2012 16:56:27</publishTime>
+    </File>
+    <File Include="bin/General.pdb">
+      <publishTime>11/26/2012 16:56:27</publishTime>
+    </File>
+    <File Include="bin/PageBase.dll">
+      <publishTime>11/26/2012 16:56:27</publishTime>
+    </File>
+    <File Include="bin/PageBase.pdb">
+      <publishTime>11/26/2012 16:56:27</publishTime>
+    </File>
+    <File Include="bin/Telerik.Web.UI.dll">
+      <publishTime>11/15/2012 17:27:54</publishTime>
+    </File>
+    <File Include="css/Module.css">
+      <publishTime>11/15/2012 17:18:58</publishTime>
+    </File>
+    <File Include="EditDirectLink.aspx">
+      <publishTime>11/15/2012 17:19:05</publishTime>
+    </File>
+    <File Include="EditObject.aspx">
+      <publishTime>11/15/2012 17:18:58</publishTime>
+    </File>
+    <File Include="EditText.aspx">
+      <publishTime>11/15/2012 17:19:04</publishTime>
+    </File>
+    <File Include="EditWidgets.aspx">
+      <publishTime>11/15/2012 17:18:58</publishTime>
+    </File>
+    <File Include="LeftMenuUserControl/ContentTreeView.ascx">
+      <publishTime>11/15/2012 17:18:57</publishTime>
+    </File>
+    <File Include="NotAllowed.aspx">
+      <publishTime>11/15/2012 17:18:58</publishTime>
+    </File>
+    <File Include="PickLanguage.aspx">
+      <publishTime>11/15/2012 17:19:04</publishTime>
+    </File>
+    <File Include="TrashCan.aspx">
+      <publishTime>11/15/2012 17:19:13</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/15/2012 17:18:58</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

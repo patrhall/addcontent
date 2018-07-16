@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+	<contenttitle value="Nyhetsbrev - statistik" />
+	<contentdescription value="Här visas en utförlig statistik för det aktuella nyhetsbrevet." />
+	<lblMailTitle value="Statistik för utskick" />
+	<lblError value="Statistik kan först visas när ett utskick är gjort" />
+	<lblError_nodetails value="Detaljerad statistik visas endast när någon har läst nyhetsbrevet" />
+	<lblSummaryHeader value="Sammanfattning av utskick" />
+	<lblNbrRecipients value="Antal mottagare" />
+  <lblNbrDelivered value="Antal levererade" />
+	<lblPercentOpened value="Andel av mottagare som öppnat brevet" />
+	<lblSendTime value="Tidpunkt för utskick" />
+	<lblNbrOpens value="Antal läsare som öppnat brevet" />
+	<lblNbrUniqueClickers value="Antal läsare som klickat på en länk" />
+	<lblPercentClickers value="Andel läsare som öppnat och klickat på någon länk" />
+	<lblNbrIsError value="Antal mailadresser med fel format" />
+	<lblLinkSummaryHeader value="Statistik för länkar i nyhetsbrevet" />
+	<lblRepLinksHeader_links value="Länkadress" />
+	<lblRepLinksHeader_NbrUniqueClick value="Läsare som klickat" />
+	<lblRepLinksHeader_PercentTot value="Andel av läsare" />
+	<lblRepLinksHeader_totClicks value="Totalt antal klick" />
+	<lblRepLinksHeader_avgClicks value="Snitt klick per läsare" />
+	<lblLinkSummaryError value="Det finns ingen statistik för länkar. Det beror på att inga läsare har klickat alternativt var det inga länkar i nyhetsbrevet." />
+	<lblDaySummaryHeader value="Statistik över tid för öppnande av nyhetsbrev" />
+	<lblStatisticByDayHeader value="Översikt över vilken dag som nyhetsbrevet har öppnats. Grafen visar hur stor andel som öppnat brevet efter visst antal dagar. Statistik visas endast för de två första veckorna efter utskicket och baseras på antalet som öppnat nyhetsbrevet av läsare som mottagit utskicket." />
+	<StatisticByDayHeader_date value="Datum" />
+	<StatisticByDayHeader_dayfromsend value="Dagar från utskick" />
+	<StatisticByDayHeader_count value="Antal som öppnat" />
+	<StatisticByDayHeader_precent value="Andel per dag som öppnat" />
+	<lblWeekBydayDescription value="Översikt över när under veckan läsarna öppnat nyhetsbrevet. Grafen anger i procent medans tabellen visar antal. Procenten baseras på antal som öppnat den dagen av läsare som öppnat. I horisontellt led visas vilken tidpunkt under veckodagen som läsaren har öppnat brevet." />
+	<lblStatisticByWeekHeader value="Översikt över när under veckan som nyhetsbrevet öppnas. Tabellen anger antal läsare." />
+	<rcDayAfterSending_ChartTitle value="Andel som öppnat antal dagar efter utskick" />
+	<rcWeekByDay_ChartTitle value="Öppningsfrekvens över veckan" />
+	<StatisticByWeekTblHeader value="Dag / Tid" />
+	<Monday value="Måndag" />
+	<Tuesday value="Tisdag" />
+	<Wednesday value="Onsdag" />
+	<Thursday value="Torsdag" />
+	<Friday value="Fredag" />
+	<Saturday value="Lördag" />
+	<Sunday value="Söndag" />
+  <lbDetailedStat value="Exportera detaljerad statistik" />
+</language>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+	<contenttitle value="Senast borttagna sidor" />
+	<contentdescription value="Här kan man flytta tillbaka nyligen borttagna sidor till menyn. Observera att sidorna kommer att hamna längst ner i menyn. Om du raderar sidan så är den borta för evigt." />
+  <gvTrash_EmptyDataText value="Det finns inga sidor i papperskorgen just nu." />
+  <gvTrash_Title value="Sidtitel" />
+  <gvTrash_ObjectType value="Sidtyp" />
+  <gvTrash_TrashedDate value="Raderingsdatum" />
+  <gvTrash_MoveToMenu value="Flytta till meny&amp;nbsp;&amp;nbsp;" />
+  <gvTrash_delete value="" />
+</language>

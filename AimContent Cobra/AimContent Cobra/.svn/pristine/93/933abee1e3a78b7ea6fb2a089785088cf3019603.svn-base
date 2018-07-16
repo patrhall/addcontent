@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Administrators" />
+  <contentdescription value="Here is an overview of people that have access to the administration." />
+  <lbNewAdmin value="Create new administrator" />
+  <DelAdminConfirm value="Remove administrator. Are you sure?" />
+  <lblFormUserName value="Username" />
+  <lblFormPassword value="Password" />
+  <lblFormNameFirst value="First name" />
+  <lblFormNamelast value="Surname" />
+  <lblFormEmail value="Email adress" />
+  <reqFirstName value="You have to fill in a first name" />
+  <reqLastName value="You have to fill in a surname" />
+  <reqPassword value="You have to fill in a password" />
+  <reqUserName value="You have to fill in a username" />
+  <btSave value="Save" />
+  <lblFormTitle_new value="Create new administrator" />
+  <lblFormTitle_edit value="Edit administrator" />
+  <rgAdministrators_username value="Username" />
+  <rgAdministrators_name value="Name" />
+  <rgAdministrators_email value="Email" />
+  <lblAdminLanguage value="Language" />
+  <lblUserGroup value="User Group" />
+  <lblMailNotifications value="Mail Notifications" />
+  <lblCbxMailNotifications value="Receive" />
+
+
+  <language1 value="Swedish" />
+  <language2 value="English" />
+</language>

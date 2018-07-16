@@ -1,0 +1,26 @@
+﻿a.tag {
+    background-color: #EFF7F7;
+    border-bottom: 1px solid #4A849C;
+    border-right: 1px solid #94B5C6;
+    color: #397394;
+    font: 11px Tahoma,Arial,Verdana,Sans-Serif;
+    margin-right: 3px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+a.tag:hover {
+    background-color: #3E6D8E;
+    border-bottom: 1px solid #37607D;
+    border-right: 1px solid #37607D;
+    color: #E0EAF1;
+    text-decoration: none;
+}
+.editcontenttable
+{
+    
+}
+.editcontenttable td
+{
+    vertical-align:top;
+    padding:10px;
+}

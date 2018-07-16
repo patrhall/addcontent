@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Group>
+    <Item Value="new" Text="Ny sida" />
+  </Group>
+</Menu>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Aimit_Aim" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;Persist Security Info=True;User ID=aimit_aim" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="Aimit_AimConnectionString7" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Config" Member="Configs">
+    <Type Name="Config">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="siteurl" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="customerpath" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cssfile" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="cssfile_editor" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cssfile_public" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="frommail" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="mailserver" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="mailserverlogin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mailserverpassword" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="documentfilters" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="imagefilters" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="editorscheme" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maxuploadbytesize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="imagespathstostrip" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="anchorpathstostrip" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="startpageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rootID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="applicationname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="objectpath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="filearchivepath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="aimbusinesspath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="aimstatspath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="visitors" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="showContentDropDown" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="liveStats" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="aimphotopath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="secureEditing" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="useJournal" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="objectTrashedNumOfDays" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="productregisterpath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="backgroundcolor" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="publicurl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="useAdminRoles" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Config_Site" Member="Sites" OtherKey="ConfigID" Type="Site" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Site" Member="Sites">
+    <Type Name="Site">
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ConfigID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Config_Site" Member="Config" ThisKey="ConfigID" Type="Config" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

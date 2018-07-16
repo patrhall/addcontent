@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AimContent" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=aimit1;Initial Catalog=AimContent;User ID=aimcontent" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="AimContentConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Timberbridge_ExportStatistics" Member="Timberbridge_ExportStatistics">
+    <Type Name="Timberbridge_ExportStatistic">
+      <Column Name="ExpID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Export" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tkr" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

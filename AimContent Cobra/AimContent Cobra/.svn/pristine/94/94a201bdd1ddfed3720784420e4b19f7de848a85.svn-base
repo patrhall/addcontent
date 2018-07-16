@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Bildarkiv - kategoriöversikt" />
+  <contentdescription value="Här finner du en översikt över alla album som du har laddat upp. För att redigera albumet klickar du på pennan. Observera att du behöver gå in på 'redigera sidegenskaper' för att bestämma för vilka roller sidan ska visas." />
+  <rgCategories_NoMasterRecordsText value="Det finns inga album" />
+  <rgCategories_c1_headertext value="Omslag" />
+  <rgCategories_c2_headertext value="Namn" />
+  <lbPreference value="&lt;img src='/Images/edit.gif' alt='Editera' /&gt; Redigera sidegenskaper" />
+  <lbCreateCategory value="&lt;img alt='Skapa nytt album' src='/Images/newobject.gif' /&gt; Skapa nytt album" />
+  <delCategoryConfirm value="Är du säker?" />
+</language>

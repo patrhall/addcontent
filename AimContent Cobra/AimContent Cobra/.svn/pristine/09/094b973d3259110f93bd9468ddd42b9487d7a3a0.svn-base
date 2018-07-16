@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Redigera formulär" />
+  <contentdescription value="Nedan redigerar du ditt formulär." />
+  <lblExternalConnectionTitle value="Redigera externa kopplingar" />
+  <lblExternalConnectionDescription value="Här väljer du om formuläret skall vara kopplat till en tillgänglig extern funktion." />
+  <cbExternalConnection value="Koppling aktiv" />
+  <emptyListItem value="Välj koppling..." />
+</language>

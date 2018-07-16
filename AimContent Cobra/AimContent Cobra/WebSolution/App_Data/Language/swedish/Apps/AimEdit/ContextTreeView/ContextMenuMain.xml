@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Group>
+    <Item Value="new" Text="Ny sida" />
+    <Item PostBack="false" Text="Byt namn" />
+    <Item Value="moveup" Text="Flytta upp" />
+    <Item Value="movedown" Text="Flytta ner" />
+    <Item Value="widgets" Text="Widgets" />
+    <Item Value="changeObjectType" Text="Ändra sidtyp" />
+    <Item Value="erase" Text="Radera" />    
+  </Group>
+</Menu>

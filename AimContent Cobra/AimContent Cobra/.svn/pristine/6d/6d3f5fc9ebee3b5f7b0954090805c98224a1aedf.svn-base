@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+	<contenttitle value="AimContent" />
+	<contentdescription value="Det har uppstått ett fel på sidan du har besökt. Det kan t.ex. bero på att du inte har behörighet eller du har använt en bruten länk." />
+	<lblDate value="Misstänker du att sidan inte fungera korrekt ber vi dig rapportera detta på supportformuläret på &lt;a href='http://www.aimit.se' target='_blank'&gt;Aimits hemsida&lt;/a&gt;. Var vänlig och ange tidpunkten då felet inträffade: " />
+</language>

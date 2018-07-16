@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Pictures - category view" />
+  <contentdescription value="Here is an overview of all albums that you have uploaded. To edit an album, click the pen. Notice that you need to visit 'edit page settings' to decide to which roles the page will be visible." />
+  <rgCategories_NoMasterRecordsText value="There are no ablums" />
+  <rgCategories_c1_headertext value="Cover" />
+  <rgCategories_c2_headertext value="Name" />
+  <lbPreference value="&lt;img src='/Images/edit.gif' alt='Edit' /&gt; Edit page settings" />
+  <lbCreateCategory value="&lt;img alt='Create new album' src='/Images/newobject.gif' /&gt; Create new album" />
+  <delCategoryConfirm value="Are you sure?" />
+</language>

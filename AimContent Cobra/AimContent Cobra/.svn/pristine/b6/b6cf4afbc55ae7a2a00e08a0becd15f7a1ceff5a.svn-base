@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Product upload" />
+  <contentdescription value="Import product structure by way of Excel. Please note that it may take a long time for the command to run and that it is important that it is allowed to run to the end in order to avoid corrupting the data files." />
+  <btnImport value = "Import" />
+</language>

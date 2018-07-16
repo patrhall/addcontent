@@ -1,0 +1,13 @@
+﻿<%--
+General for radcontrols
+--%>
+
+<rad:RadTreeView runat="server" Skin="WebBlue" />
+<rad:radeditor Runat="server" Skin="Default" />
+
+<rad:RadGrid runat="server" Skin="WebBlue">
+    <ItemStyle CssClass="radrow_style" />
+    <AlternatingItemStyle CssClass="radrow_alter_style" />
+</rad:RadGrid>  
+
+<rad:RadWindowManager runat="server" Behaviors="Close, Move" Animation="Fade" Skin="Black" KeepInScreenBounds="True" VisibleTitleBar="True" IconURL="/Images/aimit_icon.png" />

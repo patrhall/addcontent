@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Tagglista" />
+  <contentdescription value="Nedan visas en lista på de taggar som finns i systemet." />
+  <rgTags_name value="Taggnamn" />
+  <rgTags_slug value="Kortnamn" />
+  <rgTags_tagtype value="Typ" />
+  <lbNew value="Skapa ny tagg" />
+</language>

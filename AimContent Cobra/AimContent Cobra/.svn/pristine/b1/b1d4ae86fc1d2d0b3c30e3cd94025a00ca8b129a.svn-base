@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <lblHeadTitle value="Page settings" />
+  <lblHeadDescription value="Here you find settings applied to this very page. If you wish to make a general setting you'll have to make these changes in the website settings. When you have made your settings you click on the save button and you will return to the page again." />
+  <lblUrlTitle value="Link" />
+  <lblSlugTitle value="Link Title/Short Title"/>
+  <lblUrlDescription value="Here is a direct link to the page displayed." />
+  <lblRolesTitle value="Roles" />
+  <lblRolesDescription value="Choose which roles will be able to see the page." />
+  <lblPublishTitle value="Publishing" />
+  <lblPublishDescription value="If you like, you can set the dates between which the site will be published. If you don't want to set publishing dates you can uncheck the checkbox below, in which case the dates won't be saved." />
+  <lblMetaHeadTitle value="Description" />
+  <lblMetaHeadDescription value="If you would like to have the page title, description and keywords to be specific to this single page you change these settings here. If you leave these settings empty the settings from the startpage will apply." />
+  <lblMetaTitle value="The title of the page (will be displayed in the titlebar of the browser):" />
+  <lblMetaKeywords value="Keywords (for search engines), separate with comma:" />
+  <lblMetaDescription value="Short description (for search engines):" />
+  <btSave value="Save settings" />
+  <cbUsePublicationDate value="Use Publish dates" />
+  <lblPublishFrom value="Page published from:" />
+  <lblPublishTo value="Page published to:" />
+  <lblShowInMenuTitle value="Menu visibility"/>
+  <cbShowInMenu value="Show page in menu"/>
+  <lblCreatedDateTitle value="Date created"/>
+  <lblCreatedDateDescription value="Shows when the page was created. Can in some cases be used for sorting news lists."/> 
+  <lblCreatedDate value="Choose a date:"/>
+</language>

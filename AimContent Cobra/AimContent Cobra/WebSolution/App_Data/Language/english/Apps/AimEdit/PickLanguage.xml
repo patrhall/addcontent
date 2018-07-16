@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Language picker" />
+  <contentdescription value="This page type is used to choose between different language on the website." />
+  <lbPreference value="Edit page settings" />
+
+  <language1 value="Swedish" />
+  <language2 value="English" />
+  <language3 value="Korean" />
+  <language4 value="Thai" />
+  <language5 value="Danish" />
+  <language6 value="German" />
+  <language7 value="Italian" />
+</language>

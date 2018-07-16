@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Overview news" />
+  <contentdescription value="Here you can create new and edit news for the page." />
+  <rgNews_created value="Created/edited" />
+  <rgNews_title value="Subject" />
+  <rgNews_email value="Email" />
+  <rgNews_entries value="Show subscriptions" />
+  <lbNew value="Create a new news" />
+  <lbPreference value="&lt;img src='/Images/edit.gif' alt='Edit page settings' /&gt; Edit page settings" />
+  <lblMessage value="The news is created or updated" />
+</language>

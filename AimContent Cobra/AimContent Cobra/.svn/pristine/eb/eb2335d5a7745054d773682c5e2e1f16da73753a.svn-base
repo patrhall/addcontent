@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Aimit_Aim" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;User ID=aimit_aim" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="Aimit_AimConnectionString8" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TagTypeProperties" Member="TagTypeProperties">
+    <Type Name="TagTypeProperty">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TagType_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TagPropertyType_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Slug" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Sort" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TagTypeProperty_TagTypePropertyValue" Member="TagTypePropertyValues" ThisKey="ID" OtherKey="TagTypeProperty_FK" Type="TagTypePropertyValue" />
+      <Association Name="TagType_TagTypeProperty" Member="TagType" ThisKey="TagType_FK" OtherKey="ID" Type="TagType" IsForeignKey="true" />
+      <Association Name="TagPropertyType_TagTypeProperty" Member="TagPropertyType" ThisKey="TagPropertyType_FK" OtherKey="ID" Type="TagPropertyType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TagTypePropertyValues" Member="TagTypePropertyValues">
+    <Type Name="TagTypePropertyValue">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TagTypeProperty_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tag_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="TagTypeProperty_TagTypePropertyValue" Member="TagTypeProperty" ThisKey="TagTypeProperty_FK" OtherKey="ID" Type="TagTypeProperty" IsForeignKey="true" />
+      <Association Name="Tag_TagTypePropertyValue" Member="Tag" ThisKey="Tag_FK" OtherKey="ID" Type="Tag" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TagTypes" Member="TagTypes">
+    <Type Name="TagType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Slug" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Site_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TagType_TagTypeProperty" Member="TagTypeProperties" ThisKey="ID" OtherKey="TagType_FK" Type="TagTypeProperty" />
+      <Association Name="TagType_Tag" Member="Tags" ThisKey="ID" OtherKey="TagType_FK" Type="Tag" />
+      <Association Name="Site_TagType" Member="Site" ThisKey="Site_FK" OtherKey="SiteID" Type="Site" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Site" Member="Sites">
+    <Type Name="Site">
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ConfigID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Site_TagType" Member="TagTypes" ThisKey="SiteID" OtherKey="Site_FK" Type="TagType" />
+      <Association Name="Site_Object" Member="Objects" ThisKey="SiteID" OtherKey="SiteID" Type="Object" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Object" Member="Objects">
+    <Type Name="Object">
+      <Column Name="ObjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Structure" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Slug" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IntroText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HTMLContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MetaTitle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MetaKeywords" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="MetaDescription" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastChanged" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Sortorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Alt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="ObjectTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LangID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ObjectKey" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ListID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PublishFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PublishTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LinkTarget" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Visits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SecureObject" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TrashedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UploadedImagePath" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="VisibleInMenu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Object_Object_X_Tag" Member="Object_X_Tags" ThisKey="ObjectID" OtherKey="Object_FK" Type="Object_X_Tag" />
+      <Association Name="Site_Object" Member="Site" ThisKey="SiteID" OtherKey="SiteID" Type="Site" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tags" Member="Tags">
+    <Type Name="Tag">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Slug" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TagType_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Tag_TagTypePropertyValue" Member="TagTypePropertyValues" ThisKey="ID" OtherKey="Tag_FK" Type="TagTypePropertyValue" />
+      <Association Name="Tag_Object_X_Tag" Member="Object_X_Tags" ThisKey="ID" OtherKey="Tag_FK" Type="Object_X_Tag" />
+      <Association Name="Tag_Tags_X_Content" Member="Tags_X_Contents" ThisKey="ID" OtherKey="Tag_FK" Type="Tags_X_Content" />
+      <Association Name="TagType_Tag" Member="TagType" ThisKey="TagType_FK" OtherKey="ID" Type="TagType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TagPropertyType" Member="TagPropertyTypes">
+    <Type Name="TagPropertyType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Slug" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="TagPropertyType_TagTypeProperty" Member="TagTypeProperties" ThisKey="ID" OtherKey="TagPropertyType_FK" Type="TagTypeProperty" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Object_X_Tags" Member="Object_X_Tags">
+    <Type Name="Object_X_Tag">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tag_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Object_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Object_Object_X_Tag" Member="Object" ThisKey="Object_FK" OtherKey="ObjectID" Type="Object" IsForeignKey="true" />
+      <Association Name="Tag_Object_X_Tag" Member="Tag" ThisKey="Tag_FK" OtherKey="ID" Type="Tag" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tags_X_Content" Member="Tags_X_Contents">
+    <Type Name="Tags_X_Content">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tag_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Content_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Tag_Tags_X_Content" Member="Tag" ThisKey="Tag_FK" OtherKey="ID" Type="Tag" IsForeignKey="true" />
+      <Association Name="Content_Tags_X_Content" Member="Content" ThisKey="Content_FK" OtherKey="ID" Type="Content" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContentTypes" Member="ContentTypes">
+    <Type Name="ContentType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="HasFile" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ContentType_Content" Member="Contents" ThisKey="ID" OtherKey="ContentType_FK" Type="Content" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Content" Member="Contents">
+    <Type Name="Content">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HtmlContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ContentType_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWords" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Content_Tags_X_Content" Member="Tags_X_Contents" ThisKey="ID" OtherKey="Content_FK" Type="Tags_X_Content" />
+      <Association Name="ContentType_Content" Member="ContentType" ThisKey="ContentType_FK" OtherKey="ID" Type="ContentType" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

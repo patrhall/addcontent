@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+	<contenttitle value="Inställningar för styles" />
+	<contentdescription value="Här kan du administrera inställningar i styles." />
+
+	<lblMetaHeadTitle value="Beskrivning av hemsidan" />
+	<lblMetaHeadDescription value="Dessa inställningar är en spegling av beskrivningarna av startsidan. Om du inte anger en beskrivning på en enskild undersida så kommer dessa att visas istället." />
+	<lblMetaTitle value="Sidans titel (visas i webbläsarens titelrad):" />
+	<lblMetaKeywords value="Nyckelord (för sökmotorer), separera med komma:" />
+	<lblMetaDescription value="Kort beskrivning (för sökmotorer):" />
+	<btnSave value="Spara" />
+	<lblsuccessfulSave value="Uppdateringarna i Styles.css är sparade." />
+	<lblerrorSave value="Ett fel uppstod, ingen uppdatering har skett.." />
+	<msgNoDifference value="ingen skillnad mot nuvarande fil." />
+
+</language>

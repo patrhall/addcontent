@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <lblAdminUserName value="Welcome" />
+  <lblSiteName value="Website:" />
+
+  <module0 value="Overview" />
+  <module1 value="Page editing" />
+  <module2 value="Administrator" />  
+  <module4 value="Newsletter" />
+  <module5 value="Forum" />
+  <module6 value="Booking" />
+  <module7 value="Calender" />
+  <module8 value="Shop" />
+  <module9 value="AimWalk" />
+  <module10 value="Filearchive" />
+  <module11 value="Users" />
+  <module12 value="Statistics" />  
+  <module15 value="Medlemsutskick" />
+  <module16 value="Roles" />
+  <module17 value="AimSurvey Connect" />
+  <module18 value="Ads" />  
+  <module20 value="Viewing stats" />
+  <module21 value="Intranet" />
+  <module23 value="Themes" />
+  <module24 value="Forms" />
+  <module25 value="Appartments" />
+  <module26 value="Aimsurvey Web" />
+  <module27 value="Quiz" />
+  <module28 value="Company" />
+  <module29 value="Product register" />
+  <module30 value="Users" />
+  <module31 value="AimRotator" />
+  <module32 value="Document archive" />      
+</language>

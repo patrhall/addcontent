@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Create / edit news" />
+  <contentdescription value="Here you can create new and edit news for the page." />
+  <lblMailNotificationSubject value="Changes on website " />
+  <lblMailNotificationUser value="The user " />
+  <lblMailNotificationHasAddedNews value=" has added the news post " />
+
+</language>

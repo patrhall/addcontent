@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<language>
+	<lblTitle value="AimContent - administrationsverktyget" />
+	<lblContent value="Detta är Aimits CMS för dynamiska webbapplikationer. AimContent är ett flexibelt och enkelt sätt att hantera innehåll och data på din webbplats. Det är lika enkelt att jobba med vår textredigerare som i ett vanligt ordbehandlingsprogram. Bilder och filer laddas upp direkt i sidan med några få klick. &lt;br /&gt;&lt;br /&gt;I AimContent finns också en massa andra bra funktioner, t.ex. tidbokningssystem, nyhetsbrevsfunktion med uppföljning, intranätslösningar, bildarkiv, m.m.  &lt;br /&gt;&lt;br /&gt;Är du intresserad av att veta mer om hur verktyget fungerar, vänligen besök &lt;a href='http://www.aimit.se' target='_blank'&gt;vår hemsida&lt;/a&gt; eller kontakta oss via e-post på info@aimit.se" />
+  <pageTitle value="Om AimContent" />
+</language>

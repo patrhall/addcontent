@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Group>
+    <Item Value="new" Text="New page" />
+    <Item Value="moveup" Text="Move up" />
+    <Item Value="movedown" Text="Move down" />
+    <Item PostBack="false" Text="Rename" />
+  </Group>
+</Menu>

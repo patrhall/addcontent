@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <pageTitle value="Glömt lösenord?" />
+  <lblTitle value="Hämtning av användarinformation" />
+  <lblContent value="Om du skriver in din mailadress nedan och klickar på skicka så får du användarnamn och lösenord skickade till din e-postadress." />
+  <btSend value="Skicka" />
+  <mailTitle value="AimContent - användaruppgifter" />
+  <mailContent value="Detta är ett automatgenererat e-postbrev. Du får det eftersom någon har begärt att användaruppgifter till AimContent ska skickas till dig. Om du har fått det utan att begärt detta, vänligen ignorera detta meddelande" />
+  <site value="Inloggning för: " />
+  <username value="användarnamn: " />
+  <password value="lösenord: " />
+  <lblMsg value="Ett e-postmeddelande har skickats till angiven mailadress." />
+</language>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+    <contenttitle value="Produkter" />
+    <contentdescription value="Här administreras produkterna i systemet. Det går att ladda upp en Excel enligt specifikation på länken nedan och redigera enskilda artiklar. Url är vilken webbadress sidan ska ha på publika hemsidan. T.ex. ext_units här kan ge länken modul-system.com/se/products/ext_units. Beskrivningen är texten som visas för varje produktgrupp och är specifik för varje enskilt språk." />
+    <hlUploadProductExcel value="Ladda upp ny produktstruktur" />
+</language>

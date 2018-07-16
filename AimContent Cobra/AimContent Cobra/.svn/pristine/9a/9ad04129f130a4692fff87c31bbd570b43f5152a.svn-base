@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Material" />
+  <contentdescription value="Nedan visas en lista på det material som finns uppladdat i systemet." />
+  <rgContent_name value="Namn" />
+  <rgContent_tags value="Taggar" />
+  <rgContent_dateadded value="Tillagd" />
+  <lbNew value="Lägg till material" />
+</language>

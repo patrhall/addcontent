@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Bildarkiv - Ladda upp bilder till album" />
+  <contentdescription value="Här laddar du upp bilder till albumet genom att välja bilderna på din lokala dator. När du är klar klickar du på tillbaka." />
+  <btnSubmit value="Överför filer" />
+  <hpBack value="&lt;img border='o' src='/Images/arrow_left_grey.gif' style='vertical-align:middle;' title='Gå tillbaka.' /&gt; Tillbaka" />
+</language>

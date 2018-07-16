@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+	<contenttitle value="Användare" />
+	<contentdescription value="Här visas en lista på alla Användare. Här kan man redigera, ta bort och skapa nya användare." />
+	<noRecordText value="Prenumeranter saknas" />
+
+	<FirstnameHeader value="Förnamn" />
+	<LastnameHeader value="Efternamn" />
+	<EmailHeader value="Epost" />
+	<CompanyHeader value="Företag" />
+
+	<lbNewUser value="Skapa ny användare" />
+	<newUserTooltip value="Ny användare" />
+	<DelUserConfirm value="Ta bort användare. Är du säker?" />
+	<btSave value="Spara" />
+</language>

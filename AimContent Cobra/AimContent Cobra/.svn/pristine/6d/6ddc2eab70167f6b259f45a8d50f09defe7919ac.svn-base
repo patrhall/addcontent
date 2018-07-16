@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Redigering av nyhetsbrevet" />
+  <contentdescription value="Här kan innehållet i nyhetsbrevet redigeras och grupper kopplas till nyhetsbrevet. Utskick och testutskick utförs också här." />
+
+  <headerLabelText value="Rubrik" />
+  <headerValidatorText value="Rubrik är ett obligatoriskt fält" />
+
+  <noRecordText value="Grupper saknas" />
+
+  <fromMailLabelText value="Avsändaradress" />
+  <fromNameLabelText value="Avsändarnamn" />
+  <testmailLabelText value="Testutskick" />
+  <testmailAdressText value="Mottagaradress:" />
+  
+  <fromMailValidatorText value="En avsändaradress måste anges" />
+  <fromMailExpressionText value="Ej giltig Epostadress" />
+  <testMailValidatorText value="En mottagaradress måste anges" />
+  <testMailExpressionText value="Ej giltig Epostadress" />
+
+  <unregisterHeaderText value="Avanmälningslänk" />
+  <unregisterText value="Text innan avanmälningslänk:" />
+  <unregisterChoiceText value="Inkludera avanmälninglänk i utskick" />
+  <unregisterLinkText value="Unregister" />
+	
+  <weblinkHeaderText value="Webblänk" />
+  <weblinkText value="Kan du inte läsa detta mail? Kopiera följande adress och klistra in i din webläsare:" />
+
+  <weblinkLabelText value="Inkludera webblänk i utskick" />
+  <weblinkText value="Kan du inte läsa detta mail? Kopiera följande adress och klistra in i din webläsare:" />
+  
+  <editorLabelText value="Redigera mailinnehåll" />
+  <groupLabelText value="Skicka till följande grupp/grupper" />
+
+  <dateLabelText value="Utskicksdatum" />
+  <scheduleLabelText value="Använd schemalagt utskick" />
+
+  <sendConfirmMessage value="Utskicket kommer att utgå till samtliga prenumeranter i valda grupper. Är du säker?" />
+  <sendTestMessage value="Testutskick genomförs" />
+  
+  <savebuttonText value="Spara" />
+  <sendbuttonText value="Spara och Skicka" />
+  <sendtestbuttonText value="Skicka testutskick" />
+
+  <mailCreatedStatus value="Nyhetsbrev skapat" />
+  <mailSavedStatus value="Ändringar sparade" />
+  <mailSendStatus value="Nyhetsbrev skickat" />
+  <testmailSendStatus value="Testutskick skickat" />
+ </language>

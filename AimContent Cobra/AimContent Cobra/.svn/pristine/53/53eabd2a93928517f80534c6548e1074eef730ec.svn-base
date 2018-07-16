@@ -1,0 +1,8 @@
+<profile>
+      <properties>
+        <group name="AimUsers">
+          <add name="FirstName" type="string"/>
+          <add name="LastName" type="string"/>          
+        </group>        
+      </properties>
+    </profile>

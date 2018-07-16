@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+	<username value="Username:" />
+	<password value="Password:" />
+	<forgotpassword value="Forgot your password?" />
+	<about value="About AimContent" />
+	<loginbutton value="Log in" />
+</language>

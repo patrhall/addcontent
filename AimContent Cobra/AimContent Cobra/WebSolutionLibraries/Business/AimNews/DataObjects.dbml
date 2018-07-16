@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Aimit_Aim" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;User ID=sa" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="Aimit_AimConnectionString11" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AimNews_AimNews" Member="AimNews_AimNews">
+    <Type Name="AimNews_AimNew">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="AimNews_AimNew_AimNews_Site" Member="AimNews_Sites" ThisKey="ID" OtherKey="AimNewsID" Type="AimNews_Site" />
+      <Association Name="AimNews_AimNew_AimNews_Group" Member="AimNews_Groups" ThisKey="ID" OtherKey="AimNewsID" Type="AimNews_Group" />
+      <Association Name="AimNews_AimNew_AimNews_Mail" Member="AimNews_Mails" ThisKey="ID" OtherKey="AimNewsID" Type="AimNews_Mail" />
+      <Association Name="AimNews_AimNew_AimNews_User" Member="AimNews_Users" ThisKey="ID" OtherKey="AimNewsID" Type="AimNews_User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimNews_Site" Member="AimNews_Sites">
+    <Type Name="AimNews_Site">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AimNewsID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AimNews_AimNew_AimNews_Site" Member="AimNews_AimNew" ThisKey="AimNewsID" OtherKey="ID" Type="AimNews_AimNew" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimNews_MailGroup" Member="AimNews_MailGroups">
+    <Type Name="AimNews_MailGroup">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MailID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AimNews_Group_AimNews_MailGroup" Member="AimNews_Group" ThisKey="GroupID" OtherKey="ID" Type="AimNews_Group" IsForeignKey="true" />
+      <Association Name="AimNews_Mail_AimNews_MailGroup" Member="AimNews_Mail" ThisKey="MailID" OtherKey="ID" Type="AimNews_Mail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimNews_Group" Member="AimNews_Groups">
+    <Type Name="AimNews_Group">
+      <Column Name="ID" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AimNewsID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="AimNews_Group_AimNews_MailGroup" Member="AimNews_MailGroups" ThisKey="ID" OtherKey="GroupID" Type="AimNews_MailGroup" />
+      <Association Name="AimNews_Group_AimNews_GroupUser" Member="AimNews_GroupUsers" ThisKey="ID" OtherKey="GroupID" Type="AimNews_GroupUser" />
+      <Association Name="AimNews_Group_AimNews_History_X_Group" Member="AimNews_History_X_Groups" ThisKey="ID" OtherKey="GroupID" Type="AimNews_History_X_Group" />
+      <Association Name="AimNews_AimNew_AimNews_Group" Member="AimNews_AimNew" ThisKey="AimNewsID" OtherKey="ID" Type="AimNews_AimNew" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimNews_GroupUser" Member="AimNews_GroupUsers">
+    <Type Name="AimNews_GroupUser">
+      <Column Name="ID" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AimNews_Group_AimNews_GroupUser" Member="AimNews_Group" ThisKey="GroupID" OtherKey="ID" Type="AimNews_Group" IsForeignKey="true" />
+      <Association Name="AimNews_User_AimNews_GroupUser" Member="AimNews_User" ThisKey="UserID" OtherKey="ID" Type="AimNews_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimNews_Links" Member="AimNews_Links">
+    <Type Name="AimNews_Link">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HistoryID_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Association Name="AimNews_Link_AimNews_LinkedClicked" Member="AimNews_LinkedClickeds" ThisKey="ID" OtherKey="LinkID_FK" Type="AimNews_LinkedClicked" />
+      <Association Name="AimNews_History_AimNews_Link" Member="AimNews_History" ThisKey="HistoryID_FK" OtherKey="ID" Type="AimNews_History" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimNews_LinkedClicked" Member="AimNews_LinkedClickeds">
+    <Type Name="AimNews_LinkedClicked">
+      <Column Name="LogID_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LinkID_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AimNews_Link_AimNews_LinkedClicked" Member="AimNews_Link" ThisKey="LinkID_FK" OtherKey="ID" Type="AimNews_Link" IsForeignKey="true" />
+      <Association Name="AimNews_Log_AimNews_LinkedClicked" Member="AimNews_Log" ThisKey="LogID_FK" OtherKey="ID" Type="AimNews_Log" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimNews_Log" Member="AimNews_Logs">
+    <Type Name="AimNews_Log">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HistoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MailAdress" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="isOpened" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isError" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="openDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="AimNews_Log_AimNews_LinkedClicked" Member="AimNews_LinkedClickeds" ThisKey="ID" OtherKey="LogID_FK" Type="AimNews_LinkedClicked" />
+      <Association Name="AimNews_History_AimNews_Log" Member="AimNews_History" ThisKey="HistoryID" OtherKey="ID" Type="AimNews_History" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimNews_Mail" Member="AimNews_Mails">
+    <Type Name="AimNews_Mail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AimNewsID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MailKey" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="Header" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MailContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FromMail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FromName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="LastSendDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isScheduled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TestMailRecepient" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="hasWebLink" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="hasUnregisterLink" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UnregisterText" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="AimNews_Mail_AimNews_MailGroup" Member="AimNews_MailGroups" ThisKey="ID" OtherKey="MailID" Type="AimNews_MailGroup" />
+      <Association Name="AimNews_Mail_AimNews_History" Member="AimNews_Histories" ThisKey="ID" OtherKey="MailID" Type="AimNews_History" />
+      <Association Name="AimNews_AimNew_AimNews_Mail" Member="AimNews_AimNew" ThisKey="AimNewsID" OtherKey="ID" Type="AimNews_AimNew" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimNews_Users" Member="AimNews_Users">
+    <Type Name="AimNews_User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AimNewsID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Postal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Orgnr" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Unregistered" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="AimNews_User_AimNews_GroupUser" Member="AimNews_GroupUsers" ThisKey="ID" OtherKey="UserID" Type="AimNews_GroupUser" />
+      <Association Name="AimNews_AimNew_AimNews_User" Member="AimNews_AimNew" ThisKey="AimNewsID" OtherKey="ID" Type="AimNews_AimNew" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimNews_History" Member="AimNews_Histories">
+    <Type Name="AimNews_History">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MailID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NbrRecipients" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NbrOpens" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SendTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="hasFinished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NbrDuplicates" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AimNews_History_AimNews_Link" Member="AimNews_Links" ThisKey="ID" OtherKey="HistoryID_FK" Type="AimNews_Link" />
+      <Association Name="AimNews_History_AimNews_Log" Member="AimNews_Logs" ThisKey="ID" OtherKey="HistoryID" Type="AimNews_Log" />
+      <Association Name="AimNews_Mail_AimNews_History" Member="AimNews_Mail" ThisKey="MailID" OtherKey="ID" Type="AimNews_Mail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AimNews_History_X_Group" Member="AimNews_History_X_Groups">
+    <Type Name="AimNews_History_X_Group">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HistoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AimNews_Group_AimNews_History_X_Group" Member="AimNews_Group" ThisKey="GroupID" OtherKey="ID" Type="AimNews_Group" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

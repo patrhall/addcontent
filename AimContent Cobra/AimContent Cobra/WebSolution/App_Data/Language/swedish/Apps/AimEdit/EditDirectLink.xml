@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+	<contenttitle value="Skapa länk" />
+	<contentdescription value="Här kan ni skapa en länk till valfri sida på internet eller till en sida inom er egen webplats. Om sidan tillhör webbplatsen klickar ni i intern länk, annars öppnas den i ett nytt fönster. Om sidan tillhör er egen webbplats så kan ni skapa länken som relativ. Länken blir då relativ till er webplats och dess fullständiga adress kommer att bli http://webbplats.se/länkadress" />
+	<lbPreference value="Redigera sidegenskaper" />
+	<rblListType_Extern_Text value="Extern länk (öppnas i nytt fönster)" />
+	<rblListType_Internal_Text value="Intern länk (öppnas i befintligt fönster)" />
+	<rblListType_Relative_Text value="Relativ länk (öppnas i befintligt fönster)" />
+	<saveButtonText value="Spara Länk" />
+	<dropDownRelativeLinkText value="Relativ länk" />
+</language>

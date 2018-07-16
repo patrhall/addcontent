@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Upload pictures to an album" />
+  <contentdescription value="Here you can upload individual pictures or entire folders to your picture archive. Supported picture formats are jpg/jpeg/gif/png. If you upload a folder with pictures other file may be displayed in the list but these won't be saved in the picture archive. When you are finished click 'back' ." />
+  <lblError value="The page is called incorrectly! Please try again" />
+  <submitbtn value="Upload" />
+  <hpBack value="&lt;img border='o' src='/Images/arrow_left_grey.gif' title='Back' /&gt; Back" />
+</language>

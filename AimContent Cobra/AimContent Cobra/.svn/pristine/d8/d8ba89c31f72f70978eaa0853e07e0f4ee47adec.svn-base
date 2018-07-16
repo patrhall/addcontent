@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="E:\Publish\aimsitenews\120614-2" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="05/31/2012 16:09:26" />
+    <file relUrl="bin/Business.dll" publishTime="05/31/2012 16:40:31" />
+    <file relUrl="bin/AimResources.pdb" publishTime="10/24/2011 10:27:50" />
+    <file relUrl="CreateSiteNews.aspx" publishTime="05/31/2012 16:09:26" />
+    <file relUrl="bin/AimSiteNews.dll" publishTime="06/14/2012 14:59:55" />
+    <file relUrl="bin/General.dll" publishTime="05/31/2012 16:40:47" />
+    <file relUrl="bin/Business.pdb" publishTime="05/31/2012 16:40:31" />
+    <file relUrl="bin/Telerik.Web.UI.dll" publishTime="05/31/2012 16:07:35" />
+    <file relUrl="bin/General.pdb" publishTime="05/31/2012 16:40:47" />
+    <file relUrl="bin/Telerik.Web.UI.xml" publishTime="05/31/2012 16:07:37" />
+    <file relUrl="Overview.aspx" publishTime="05/31/2012 16:09:26" />
+    <file relUrl="bin/PageBase.dll" publishTime="05/31/2012 16:40:40" />
+    <file relUrl="bin/AimResources.dll" publishTime="10/24/2011 10:27:50" />
+    <file relUrl="bin/PageBase.pdb" publishTime="05/31/2012 16:40:40" />
+    <file relUrl="bin/ephtmltopdf.dll" publishTime="05/09/2008 13:10:00" />
+    <file relUrl="bin/AimSiteNews.pdb" publishTime="06/14/2012 14:12:07" />
+  </publishProfile>
+</publishData>

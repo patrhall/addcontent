@@ -1,0 +1,60 @@
+﻿<root>
+    <modules>
+    </modules>
+    <tools name="MainToolbar" isribbon="false" dockable="true">
+        <tool name="FindAndReplace" shortcut="CTRL+F"/>
+        <tool name="Copy" shortcut="CTRL+C"/>
+        <tool name="PastePlainText" shortcut="CTRL+V" />
+        <tool separator="true"/>
+        <tool name="Undo" shortcut="CTRL+Z"/>
+        <tool name="Redo" shortcut="CTRL+Y"/>
+    </tools>
+    <tools name="InsertToolbar" isribbon="false">
+        <tool name="ImageManager" shortcut="CTRL+G"/>
+        <tool name="AbsolutePosition" />
+        <tool separator="true"/>
+        <tool name="LinkManager" shortcut="CTRL+K"/>
+        <tool name="Unlink" shortcut="CTRL+SHIFT+K"/>
+    </tools>
+    <tools isribbon = "false">
+        <tool name="Bold" shortcut="CTRL+B"/>
+        <tool name="Italic" shortcut="CTRL+I"/>
+        <tool name="Underline" shortcut="CTRL+U"/>
+        <tool separator="true"/>
+        <tool name="ForeColor" />
+        <tool name="BackColor"/>
+        <tool separator="true"/>
+        <tool name="FontName"/>
+        <tool name="RealFontSize"/>
+    </tools>
+    <tools isribbon="false">
+        <tool name="ConvertToLower" />
+        <tool name="ConvertToUpper" />
+        <tool separator="true"/>
+
+        <tool name="InsertTable" />
+        <tool name="InsertSymbol" />
+        <tool separator="true"/>
+    </tools>
+
+    <tools name="DropdownToolbar" isribbon="false">
+        <tool name="FormatBlock"/>
+        <tool name="ApplyClass"/>
+    </tools>
+
+    <links>
+    </links>
+    <snippets>
+    </snippets>
+    <symbols></symbols>
+    <fontNames>	</fontNames>
+    <fontSizes></fontSizes>
+    <colors></colors>
+    <paragraphs>
+        <paragraph name="Header 1" value="h1" />
+        <paragraph name="Header 2" value="h2" />
+        <paragraph name="Header 3" value="h3" />
+        <paragraph name="Header 4" value="h4" />
+        <paragraph name="Normal" value="p" />
+    </paragraphs>
+</root>

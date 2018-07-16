@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Latest removed pages" />
+  <contentdescription value="Here you can move back lately removed pages to the menu. Notice that the pages will be found at the bottom of the menu. If you delete the page it will be removed forever." />
+  <gvTrash_EmptyDataText value="There are no pages in the trashcan right now." />
+  <gvTrash_Title value="Page title" />
+  <gvTrash_ObjectType value="Page type" />
+  <gvTrash_TrashedDate value="Date of deletion" />
+  <gvTrash_MoveToMenu value="Move back to menu&amp;nbsp;&amp;nbsp;" />
+  <gvTrash_delete value="" />
+</language>

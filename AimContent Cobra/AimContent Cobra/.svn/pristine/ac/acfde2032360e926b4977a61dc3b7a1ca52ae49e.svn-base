@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="E:\Publish\cobra2\101213" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/AimAdministrator.dll" publishTime="12/13/2010 08:20:44" />
+    <file relUrl="bin/Business.dll" publishTime="12/07/2010 09:03:18" />
+    <file relUrl="bin/AimResources.pdb" publishTime="08/16/2010 10:12:29" />
+    <file relUrl="bin/PageBase.pdb" publishTime="12/13/2010 08:06:44" />
+    <file relUrl="Administrators.aspx" publishTime="09/11/2009 10:47:47" />
+    <file relUrl="bin/AimAdministrator.pdb" publishTime="12/13/2010 08:20:44" />
+    <file relUrl="bin/Telerik.Web.UI.dll" publishTime="11/08/2010 15:28:50" />
+    <file relUrl="bin/Business.pdb" publishTime="12/07/2010 09:03:18" />
+    <file relUrl="Web.config" publishTime="09/11/2009 10:47:47" />
+    <file relUrl="bin/Telerik.Web.UI.xml" publishTime="12/13/2010 07:45:32" />
+    <file relUrl="bin/PageBase.dll" publishTime="12/13/2010 08:06:44" />
+    <file relUrl="bin/AimResources.dll" publishTime="08/16/2010 10:12:29" />
+    <file relUrl="bin/ephtmltopdf.dll" publishTime="05/09/2008 13:10:00" />
+  </publishProfile>
+</publishData>

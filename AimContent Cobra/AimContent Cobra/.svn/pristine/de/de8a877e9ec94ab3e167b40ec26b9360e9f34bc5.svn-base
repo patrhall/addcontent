@@ -1,0 +1,43 @@
+﻿/* FONT-STYLES */
+.normal
+{
+	font-size:11px;
+}
+
+.bigtitle
+{
+	font-weight:bold;
+	font-size:14px;
+}
+
+.title
+{	
+	font-weight:bold;	
+}
+
+.italic
+{
+	font-style:italic;
+}
+
+.bold
+{
+	font-weight:bold;
+}
+
+.message
+{
+	color:Red;	
+}
+.confirm
+{
+	color:Green;	
+}
+
+.error
+{
+	color:Red;
+	font-weight:bold;
+}
+
+

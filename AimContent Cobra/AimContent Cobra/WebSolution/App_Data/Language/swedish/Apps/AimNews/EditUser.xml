@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <FirstnameLabelText value="Förnamn" />
+  <LastnameLabelText value="Efternamn" />
+  <EmailLabelText value="E-postadress" />
+  <CompanyLabelText value="Företag" />
+  <TelephoneLabelText value="Telefon" />
+  <MobileLabelText value="Mobil" />
+  <FaxLabelText value="Fax" />
+  <AddressLabelText value="Adress" />
+  <PostalLabelText value="Postnr" />  
+  <CityLabelText value="Stad" />
+  <CountryLabelText value="Land" />
+  <OrgnrLabelText value="Orgnr" />
+  
+  <FirstnameValidatorText value="Förnamn måste anges" />
+  <LastnameValidatorText value="Efternamn måste anges" />
+  <EmailValidatorText value="En E-postadress måste anges" />
+  <EmailExpressionText value="Ej giltig E-postadress" />
+  <CompanyValidatorText value="Företag måste anges" />
+  <savebuttonText value="Spara" />
+
+
+  <userCreatedStatus value="Användare skapad" />
+  <userSavedStatus value="Ändringar sparade" />
+
+  <contenttitle value="Redigering av användare" />
+  <contentdescription value="Här kan listor importeras och användare läggas till gruppen." />
+</language>

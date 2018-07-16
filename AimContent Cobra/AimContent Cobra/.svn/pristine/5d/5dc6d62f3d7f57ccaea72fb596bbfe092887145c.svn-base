@@ -1,0 +1,8 @@
+<publishData>
+  <publishTarget publishUrl="E:\Publish\cobra\091106\">
+    <file relUrl="bin/ProfileBuilder.dll" publishTime="11/06/2009 09:43:33" />
+    <file relUrl="bin/ProfileBuilder.pdb" publishTime="11/06/2009 09:43:33" />
+    <file relUrl="readme.txt" publishTime="09/11/2009 10:47:19" />
+    <file relUrl="Web.config" publishTime="09/11/2009 10:47:19" />
+  </publishTarget>
+</publishData>

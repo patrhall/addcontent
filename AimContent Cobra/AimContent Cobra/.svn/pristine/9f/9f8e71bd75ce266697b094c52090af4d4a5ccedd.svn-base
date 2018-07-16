@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <headerlabelText value="Gruppnamn" />
+  <descriptionLabelText value="Beskrivning av grupp" />
+  <validatorText value="Ett gruppnamn måste anges" />
+  <savebuttonText value="Spara" />
+  <contenttitle value="Redigering av grupp" />
+  <contentdescription value="Här kan listor importeras och användare läggas till gruppen." />
+
+  <noRecordText value="Prenumeranter saknas" />
+  <userlabelText value="Prenumeranter" />
+  
+  <importbuttonText value="Importera mottagare från Excel" />
+  <newuserTooltip value="Skapa ny prenumerant" />
+  <noRecordText value="premenurant saknas" />
+
+  <FirstnameHeader value="Förnamn" />
+  <LastnameHeader value="Efternamn" />
+  <EmailHeader value="Epost" />
+  <CompanyHeader value="Företag" />
+
+  <DelUserConfirm value="Ta bort användare. Är du säker?" />
+
+  <groupCreatedStatus value="Ny grupp skapad" />
+  <groupSavedStatus value="Grupp sparad" />
+  <importedFileStatus value="Fil importerad" />
+  <importedFileErrorStatus value="Ett fel har uppstått, ingen fil har importerats." />
+</language>

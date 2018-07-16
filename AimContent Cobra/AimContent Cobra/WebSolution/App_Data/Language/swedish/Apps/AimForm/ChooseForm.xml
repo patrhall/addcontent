@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Formulär" />
+  <contentdescription value="Välj formulär att koppla sida till:" />
+  <lbPreference value="&lt;img src='/Images/edit.gif' alt='Redigera sidegenskaper' /&gt; Redigera sidegenskaper" />
+</language>

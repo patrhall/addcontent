@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Aimit_Aim" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.0.3;Initial Catalog=Aimit_Aim;Persist Security Info=True;User ID=sa" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="Aimit_AimConnectionString9" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Module" Member="Modules">
+    <Type Name="Module">
+      <Column Name="ModuleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ModuleName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UseLeftMenu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UserControlName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Module_SiteModule" Member="SiteModules" ThisKey="ModuleID" OtherKey="ModuleID" Type="SiteModule" />
+      <Association Name="Module_Roles_X_Module" Member="Roles_X_Modules" ThisKey="ModuleID" OtherKey="Module_FK" Type="Roles_X_Module" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Site" Member="Sites">
+    <Type Name="Site">
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ConfigID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Site_SiteModule" Member="SiteModules" ThisKey="SiteID" OtherKey="SiteID" Type="SiteModule" />
+      <Association Name="Site_SiteObjectType" Member="SiteObjectTypes" ThisKey="SiteID" OtherKey="SiteID" Type="SiteObjectType" />
+      <Association Name="Site_Admin" Member="Admins" ThisKey="SiteID" OtherKey="siteID" Type="Admin" />
+      <Association Name="Site_Object" Member="Objects" ThisKey="SiteID" OtherKey="SiteID" Type="Object" />
+      <Association Name="Site_Roles_X_Module" Member="Roles_X_Modules" ThisKey="SiteID" OtherKey="SiteID" Type="Roles_X_Module" />
+      <Association Name="Config_Site" Member="Config" ThisKey="ConfigID" OtherKey="ID" Type="Config" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiteModule" Member="SiteModules">
+    <Type Name="SiteModule">
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ModuleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Module_SiteModule" Member="Module" ThisKey="ModuleID" OtherKey="ModuleID" Type="Module" IsForeignKey="true" />
+      <Association Name="Site_SiteModule" Member="Site" ThisKey="SiteID" OtherKey="SiteID" Type="Site" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiteObjectType" Member="SiteObjectTypes">
+    <Type Name="SiteObjectType">
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ObjectTypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ObjectTypeURL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UseLongURL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Site_SiteObjectType" Member="Site" ThisKey="SiteID" OtherKey="SiteID" Type="Site" IsForeignKey="true" />
+      <Association Name="ObjectType_SiteObjectType" Member="ObjectType" ThisKey="ObjectTypeID" OtherKey="ObjectTypeID" Type="ObjectType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ObjectType" Member="ObjectTypes">
+    <Type Name="ObjectType">
+      <Column Name="ObjectTypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ObjectType" Member="ObjectType1" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="VisibleInList" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="commentsAboutOT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="ObjectType_SiteObjectType" Member="SiteObjectTypes" ThisKey="ObjectTypeID" OtherKey="ObjectTypeID" Type="SiteObjectType" />
+      <Association Name="ObjectType_Object" Member="Objects" ThisKey="ObjectTypeID" OtherKey="ObjectTypeID" Type="Object" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdminLanguage" Member="AdminLanguages">
+    <Type Name="AdminLanguage">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="AdminLanguage_Admin" Member="Admins" ThisKey="ID" OtherKey="AdminLanguage_FK" Type="Admin" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admin" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="firstname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lastname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="siteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdminLanguage_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Admin_AdminRole" Member="AdminRoles" ThisKey="ID" OtherKey="AdminID" Type="AdminRole" />
+      <Association Name="AdminLanguage_Admin" Member="AdminLanguage" ThisKey="AdminLanguage_FK" OtherKey="ID" Type="AdminLanguage" IsForeignKey="true" />
+      <Association Name="Site_Admin" Member="Site" ThisKey="siteID" OtherKey="SiteID" Type="Site" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Config" Member="Configs">
+    <Type Name="Config">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="siteurl" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="customerpath" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cssfile" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="cssfile_editor" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cssfile_public" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="frommail" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="mailserver" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="mailserverlogin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mailserverpassword" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="documentfilters" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="imagefilters" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="editorscheme" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maxuploadbytesize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="imagespathstostrip" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="anchorpathstostrip" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="startpageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rootID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="applicationname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="objectpath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="filearchivepath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="aimbusinesspath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="aimstatspath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="visitors" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="showContentDropDown" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="liveStats" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="aimphotopath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="secureEditing" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="useJournal" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="objectTrashedNumOfDays" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="productregisterpath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="backgroundcolor" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="publicurl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="useAdminRoles" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Config_Site" Member="Sites" ThisKey="ID" OtherKey="ConfigID" Type="Site" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Role">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Role_AdminRole" Member="AdminRoles" ThisKey="ID" OtherKey="RoleID" Type="AdminRole" />
+      <Association Name="Role_Object_X_AdminRole" Member="Object_X_AdminRoles" ThisKey="ID" OtherKey="RoleId" Type="Object_X_AdminRole" />
+      <Association Name="Role_Roles_X_Module" Member="Roles_X_Modules" ThisKey="ID" OtherKey="Roles_FK" Type="Roles_X_Module" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdminRoles" Member="AdminRoles">
+    <Type Name="AdminRole">
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AdminID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Admin_AdminRole" Member="Admin" ThisKey="AdminID" OtherKey="ID" Type="Admin" IsForeignKey="true" />
+      <Association Name="Role_AdminRole" Member="Role" ThisKey="RoleID" OtherKey="ID" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Object" Member="Objects">
+    <Type Name="Object">
+      <Column Name="ObjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Structure" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HTMLContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MetaTitle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MetaKeywords" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="MetaDescription" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastChanged" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Sortorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Alt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="ObjectTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LangID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ObjectKey" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ListID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PublishFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PublishTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LinkTarget" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Visits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SecureObject" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TrashedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UploadedImagePath" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Association Name="Object_Object_X_AdminRole" Member="Object_X_AdminRoles" ThisKey="ObjectID" OtherKey="ObjectId" Type="Object_X_AdminRole" />
+      <Association Name="ObjectType_Object" Member="ObjectType" ThisKey="ObjectTypeID" OtherKey="ObjectTypeID" Type="ObjectType" IsForeignKey="true" />
+      <Association Name="Site_Object" Member="Site" ThisKey="SiteID" OtherKey="SiteID" Type="Site" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Object_X_AdminRoles" Member="Object_X_AdminRoles">
+    <Type Name="Object_X_AdminRole">
+      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ObjectId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Object_Object_X_AdminRole" Member="Object" ThisKey="ObjectId" OtherKey="ObjectID" Type="Object" IsForeignKey="true" />
+      <Association Name="Role_Object_X_AdminRole" Member="Role" ThisKey="RoleId" OtherKey="ID" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles_X_Module" Member="Roles_X_Modules">
+    <Type Name="Roles_X_Module">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Roles_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Module_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Module_Roles_X_Module" Member="Module" ThisKey="Module_FK" OtherKey="ModuleID" Type="Module" IsForeignKey="true" />
+      <Association Name="Role_Roles_X_Module" Member="Role" ThisKey="Roles_FK" OtherKey="ID" Type="Role" IsForeignKey="true" />
+      <Association Name="Site_Roles_X_Module" Member="Site" ThisKey="SiteID" OtherKey="SiteID" Type="Site" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.usp_GetConfig" Method="usp_GetConfig">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetConfigResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="siteurl" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="customerpath" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cssfile" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="cssfile_editor" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cssfile_public" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="frommail" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="mailserver" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="mailserverlogin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mailserverpassword" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="documentfilters" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="imagefilters" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="editorscheme" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maxuploadbytesize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="imagespathstostrip" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="anchorpathstostrip" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="startpageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rootID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="applicationname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="objectpath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="filearchivepath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="aimbusinesspath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="aimstatspath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="visitors" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="showContentDropDown" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="liveStats" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="aimphotopath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="secureEditing" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="useJournal" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="objectTrashedNumOfDays" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="productregisterpath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="backgroundcolor" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_GetModules" Method="usp_GetModules">
+    <Parameter Name="SiteID" Parameter="siteID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ModuleID" Parameter="moduleID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetModulesResult">
+      <Column Name="ModuleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModuleName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UseLeftMenu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UserControlName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_GetRoles" Method="usp_GetRoles">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetRolesResult">
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_GetPublishDates" Method="usp_GetPublishDates">
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetPublishDatesResult">
+      <Column Name="PublishFrom" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PublishTo" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_GetObject" Method="usp_GetObject">
+    <Parameter Name="SiteID" Parameter="siteID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetObjectResult">
+      <Column Name="ObjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Structure" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HTMLContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MetaTitle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MetaKeywords" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="MetaDescription" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastChanged" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Sortorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Alt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="ObjectTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LangID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ObjectKey" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ListID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PublishFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PublishTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LinkTarget" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Visits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SecureObject" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TrashedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UploadedImagePath" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

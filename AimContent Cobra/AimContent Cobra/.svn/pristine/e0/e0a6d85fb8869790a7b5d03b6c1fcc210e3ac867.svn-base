@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Settings for the website" />
+  <contentdescription value="Here you can administrate settings applied to the entire site and also view predefined settings." />
+
+  <lblMetaHeadTitle value="Description of the website." />
+  <lblMetaHeadDescription value="These settings are a reflection of the descriptions of the startpage. If you don't set a description of a single subpage these settings will be displayed instead." />
+  <lblMetaTitle value="The title of the page (will be displayed in the titlebar of the browser):" />
+  <lblMetaKeywords value="Keywords (for search engines), separate with comma:" />
+  <lblMetaDescription value="Short description (for search engines):" />
+  
+  
+  <lblPrePreferenceTitle value="Predefined settings" />
+  <lblPrePreferenceDescription value="Here you can view the settings made when configuring the website. These cannot be changed." />
+  <lblPrePreferenceSiteUrl value="Website url" />
+  <lblPrePreferenceMaxFilesize value="Maximum filesize when uploading files" />
+  <lblPrePreferenceLcid value="Culture settings" />
+  <lblPrePreferenceUseAdminRoles value="Authorized roles for administrators" />
+  <lblPrePreferenceSecureEditing value="Authentication for file access" />
+  <lblPrePreferenceLiveStat value="Statistics" />
+  <lblPrePreferenceID value="Unique ID for the website" />
+
+  <lblPrePreferenceLiveStatValue_true value="Link (will be opened in a new window)" />
+  <lblPrePreferenceLiveStatValue_false value="Not acitivated" />
+
+  <btMetaSave value="Save" />
+  <lblMetaMessage value="The description has been updated" />
+
+  <btSaveAdminRoles value="Save" />
+  <lblAdminRolesTitle value="Rättigheter i administrationen" />
+  <lblAdminRolesDescription value="Här administreras vilka administratörsrättigheter som har tillgång till respektive avdelning. Superadmin har alltid åtkomst till allt." />
+
+  <no value="No" />
+  <yes value="Yes" />
+</language>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Översikt nyheter" />
+  <contentdescription value="Här kan du skapa och redigera nyheter till sidan." />
+  <rgNews_created value="Skapad/ändrad" />
+  <rgNews_title value="Ämne" />
+  <rgNews_email value="E-post" />
+  <rgNews_entries value="Visa anmälningar" />
+  <lbNew value="Skapa ny nyhet" />
+  <lbPreference value="&lt;img src='/Images/edit.gif' alt='Redigera sidegenskaper' /&gt; Redigera sidegenskaper" />
+  <lblMessage value="Nyheten är skapad eller uppdaterad" />
+</language>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="E:\Publish\cobra\100923" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="09/11/2009 10:47:37" />
+    <file relUrl="bin/Business.dll" publishTime="06/24/2010 15:06:39" />
+    <file relUrl="bin/AimResources.pdb" publishTime="08/16/2010 10:12:29" />
+    <file relUrl="Customers/Boletus/Website/Overview.aspx" publishTime="09/23/2010 11:57:02" />
+    <file relUrl="AimBusinessRedirect.aspx" publishTime="09/11/2009 10:47:37" />
+    <file relUrl="Customers/Tjuge22/Website/Overview.aspx" publishTime="09/11/2009 10:47:37" />
+    <file relUrl="Customers/AimFor2022/Website/Overview.aspx" publishTime="09/11/2009 10:47:37" />
+    <file relUrl="Customers/Boletus/Website/EditProduct.aspx" publishTime="09/23/2010 12:03:46" />
+    <file relUrl="bin/General.dll" publishTime="09/22/2010 16:19:09" />
+    <file relUrl="bin/Business.pdb" publishTime="06/24/2010 15:06:39" />
+    <file relUrl="Customers/Tjuge22/Website/Images/storbild10.jpg" publishTime="09/11/2009 10:47:37" />
+    <file relUrl="bin/Telerik.Web.UI.dll" publishTime="03/08/2010 15:22:00" />
+    <file relUrl="bin/General.pdb" publishTime="09/22/2010 16:19:09" />
+    <file relUrl="bin/Telerik.Web.UI.xml" publishTime="03/09/2010 15:22:00" />
+    <file relUrl="bin/AimBusiness.pdb" publishTime="09/23/2010 12:06:37" />
+    <file relUrl="bin/PageBase.dll" publishTime="09/22/2010 16:19:03" />
+    <file relUrl="bin/AimResources.dll" publishTime="08/16/2010 10:12:29" />
+    <file relUrl="Customers/AimFor2022/Website/Images/storbild10.jpg" publishTime="09/11/2009 10:47:37" />
+    <file relUrl="bin/PageBase.pdb" publishTime="09/22/2010 16:19:03" />
+    <file relUrl="bin/ephtmltopdf.dll" publishTime="05/09/2008 13:10:00" />
+    <file relUrl="bin/AimBusiness.dll" publishTime="09/23/2010 12:06:37" />
+  </publishProfile>
+</publishData>

@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 12.25" name="DataObjects">
+  <DataContextMoniker Name="/DataObjectsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3b3a82a6-c301-4ea7-96e2-9b0c4f2242bb" absoluteBounds="0.75, 5.75, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimNews_AimNew" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f82e1f4d-0dd7-4a56-950b-1c5f7df3d39f" absoluteBounds="0.765, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c2cd4656-dfcf-47b8-b09a-735da2aa21b5" absoluteBounds="1, 3.75, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimNews_Site" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b4d67371-053f-47f5-9570-044867d1aace" absoluteBounds="1.0150000000000001, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="84b1a068-8d2a-45dd-a146-ca2d3599603b" absoluteBounds="6.625, 3.25, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimNews_MailGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8af10bc4-3872-428f-8ba5-9d48c259655f" absoluteBounds="6.64, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.875 : 5.75); (1.875 : 5.01050048828125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_AimNew/AimNews_AimNew_AimNews_Site" />
+      <nodes>
+        <classShapeMoniker Id="3b3a82a6-c301-4ea7-96e2-9b0c4f2242bb" />
+        <classShapeMoniker Id="c2cd4656-dfcf-47b8-b09a-735da2aa21b5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="844cae21-80f9-4a6d-92b3-8e48a40c625c" absoluteBounds="3.375, 5.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimNews_Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d732885-42ae-4166-921d-d9881bb13c63" absoluteBounds="3.3899999999999997, 6.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 6.09375); (8.59375 : 6.09375); (8.59375 : 4.51050048828125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_Group/AimNews_Group_AimNews_MailGroup" />
+      <nodes>
+        <classShapeMoniker Id="844cae21-80f9-4a6d-92b3-8e48a40c625c" />
+        <classShapeMoniker Id="84b1a068-8d2a-45dd-a146-ca2d3599603b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.29807657877604); (3.375 : 6.29807657877604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_AimNew/AimNews_AimNew_AimNews_Group" />
+      <nodes>
+        <classShapeMoniker Id="3b3a82a6-c301-4ea7-96e2-9b0c4f2242bb" />
+        <classShapeMoniker Id="844cae21-80f9-4a6d-92b3-8e48a40c625c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a350e651-10fb-4868-bf64-f790ae24ae83" absoluteBounds="6.5, 6.5, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimNews_GroupUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="41179587-7d34-4623-a06b-e51f8ad4f1f7" absoluteBounds="6.515, 6.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 6.83742390950521); (6.5 : 6.83742390950521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_Group/AimNews_Group_AimNews_GroupUser" />
+      <nodes>
+        <classShapeMoniker Id="844cae21-80f9-4a6d-92b3-8e48a40c625c" />
+        <classShapeMoniker Id="a350e651-10fb-4868-bf64-f790ae24ae83" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0e21df8c-8172-4cb4-9c1f-971987f89dec" absoluteBounds="1.25, 2, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimNews_Link" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a1b61bf1-cdcd-4b55-841a-bc3797e73207" absoluteBounds="1.2650000000000001, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="44f72ebf-cd92-4f03-a2a6-804c8a02cd01" absoluteBounds="1.375, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimNews_LinkedClicked" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db956a6a-9f95-441b-af9f-5212e2035773" absoluteBounds="1.3900000000000001, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.3125 : 2); (2.3125 : 1.8862939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_Link/AimNews_Link_AimNews_LinkedClicked" />
+      <nodes>
+        <classShapeMoniker Id="0e21df8c-8172-4cb4-9c1f-971987f89dec" />
+        <classShapeMoniker Id="44f72ebf-cd92-4f03-a2a6-804c8a02cd01" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0cd9519e-a100-472b-9ff9-cf2c93d8cb89" absoluteBounds="6.875, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimNews_Log" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67f82971-65a2-4f06-908a-b4b7d681e70f" absoluteBounds="6.89, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.875 : 1.19314697265625); (6.14583333333333 : 1.19314697265625 : JumpStart); (5.97916666666667 : 1.19314697265625 : JumpEnd); (3.375 : 1.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_Log/AimNews_Log_AimNews_LinkedClicked" />
+      <nodes>
+        <classShapeMoniker Id="0cd9519e-a100-472b-9ff9-cf2c93d8cb89" />
+        <classShapeMoniker Id="44f72ebf-cd92-4f03-a2a6-804c8a02cd01" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7d76795a-e4c7-4c16-b676-86542f3de742" absoluteBounds="4, 2.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimNews_Mail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1a0956f-dc75-49a8-8a4f-dfeb41e912a7" absoluteBounds="4.015, 3.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6 : 3.94314697265625); (6.625 : 3.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_Mail/AimNews_Mail_AimNews_MailGroup" />
+      <nodes>
+        <classShapeMoniker Id="7d76795a-e4c7-4c16-b676-86542f3de742" />
+        <classShapeMoniker Id="84b1a068-8d2a-45dd-a146-ca2d3599603b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.84375 : 5.75); (0.84375 : 5.36348714192708); (1.79166666666667 : 5.36348714192708 : JumpStart); (1.95833333333333 : 5.36348714192708 : JumpEnd); (4 : 5.36348714192708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_AimNew/AimNews_AimNew_AimNews_Mail" />
+      <nodes>
+        <classShapeMoniker Id="3b3a82a6-c301-4ea7-96e2-9b0c4f2242bb" />
+        <classShapeMoniker Id="7d76795a-e4c7-4c16-b676-86542f3de742" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="bf163302-57d0-46b8-b847-97c8b46ea6d1" absoluteBounds="3.5, 8.25, 2, 3.6939111328125005">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimNews_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3109e4bb-8d07-4089-a2bf-9ab8c1cf3a6d" absoluteBounds="3.5149999999999997, 8.71, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 9.86633422851562); (7.5 : 9.86633422851562); (7.5 : 7.76050048828125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_User/AimNews_User_AimNews_GroupUser" />
+      <nodes>
+        <classShapeMoniker Id="bf163302-57d0-46b8-b847-97c8b46ea6d1" />
+        <classShapeMoniker Id="a350e651-10fb-4868-bf64-f790ae24ae83" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 6.84615315755208); (1.75 : 9.86633422851562); (3.5 : 9.86633422851562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_AimNew/AimNews_AimNew_AimNews_User" />
+      <nodes>
+        <classShapeMoniker Id="3b3a82a6-c301-4ea7-96e2-9b0c4f2242bb" />
+        <classShapeMoniker Id="bf163302-57d0-46b8-b847-97c8b46ea6d1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="95d8df5d-3b3b-4010-8c9a-892300b647f9" absoluteBounds="9.75, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimNews_History" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fd08a04-58a7-4cdd-83e3-0ce37837ac62" absoluteBounds="9.765, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.75 : 0.5); (10.75 : 0.4375); (6.0625 : 0.4375); (6.0625 : 2.3437505); (3.25 : 2.3437505)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_History/AimNews_History_AimNews_Link" />
+      <nodes>
+        <classShapeMoniker Id="95d8df5d-3b3b-4010-8c9a-892300b647f9" />
+        <classShapeMoniker Id="0e21df8c-8172-4cb4-9c1f-971987f89dec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.75 : 1.67390055338542); (8.875 : 1.67390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_History/AimNews_History_AimNews_Log" />
+      <nodes>
+        <classShapeMoniker Id="95d8df5d-3b3b-4010-8c9a-892300b647f9" />
+        <classShapeMoniker Id="0cd9519e-a100-472b-9ff9-cf2c93d8cb89" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 5.37905110677083); (8.51041666666667 : 5.37905110677083 : JumpStart); (8.67708333333333 : 5.37905110677083 : JumpEnd); (10.2187475 : 5.37905110677083); (10.2187475 : 2.84780110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_Mail/AimNews_Mail_AimNews_History" />
+      <nodes>
+        <classShapeMoniker Id="7d76795a-e4c7-4c16-b676-86542f3de742" />
+        <classShapeMoniker Id="95d8df5d-3b3b-4010-8c9a-892300b647f9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="08b1a657-0ae2-41b4-9950-0bf03dca8d31" absoluteBounds="12, 4.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimNews_History_X_Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4f63b07-6cba-43cb-9c37-f024c4e97b89" absoluteBounds="12.015, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 6.27965413411458); (13 : 6.27965413411458); (13 : 5.7612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimNews_Group/AimNews_Group_AimNews_History_X_Group" />
+      <nodes>
+        <classShapeMoniker Id="844cae21-80f9-4a6d-92b3-8e48a40c625c" />
+        <classShapeMoniker Id="08b1a657-0ae2-41b4-9950-0bf03dca8d31" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

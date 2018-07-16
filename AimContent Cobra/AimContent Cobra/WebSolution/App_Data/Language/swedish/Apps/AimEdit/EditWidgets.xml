@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Widgethantering" />
+  <contentdescription value="Här administreras widgets för sidan. För att redigera egenskaper används pennan. Widget måste publiceras för att visas på sidan." />
+  <lbMoveUp_Text value="Flytta upp" />
+  <lbMoveDown_Text value="Flytta ner" />
+  <btSave_Text value="Spara egenskaper för widgets" />
+  <lblEditDefaultDescription_Text value="Markeras en widget som standard så kommer den synas på alla sidor samt inte gå att sortera utan hamnar överst. Widget kommer tappa sin bindning med aktuell sida." />
+  <cbEditDefault_Text value="Widget är standard på alla sidor" />
+  <lblEditLocalName_Text value="Namn på widget (t.ex. info-ruta)" />
+  <btAdd_Text value="Lägg till" />
+  <lblNew_Text value="Lägg till Widgets:" />
+  <Area_Text value="Område:" />
+</language>

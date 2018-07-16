@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataObjects">
+  <DataContextMoniker Name="/DataObjectsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="123c72be-0f63-4172-a586-784d84e33fd6" absoluteBounds="1.25, 2.25, 2, 2.0822371419270826">
+      <DataClassMoniker Name="/DataObjectsDataContext/Calendar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2404fe9d-10d0-4868-a4b5-b17a9f9e00b7" absoluteBounds="1.2650000000000001, 2.71, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f149cef4-6457-4c5f-9c14-599900929be4" absoluteBounds="1.125, 0.5, 2, 1.2605004882812503">
+      <DataClassMoniker Name="/DataObjectsDataContext/CalendarGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c47fd84e-3532-4bc5-88a7-96b6df1a0a41" absoluteBounds="1.1400000000000001, 0.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ec3b6665-7c05-4535-adbf-e92d64ce6963" absoluteBounds="3.625, 2.25, 2, 1.2605004882812503">
+      <DataClassMoniker Name="/DataObjectsDataContext/CalendarTroopConnection" />
+      <nestedChildShapes>
+        <elementListCompartment Id="429a6d43-de21-4e42-9086-9f8fb8920219" absoluteBounds="3.6399999999999997, 2.71, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.1875 : 1.76050048828125); (2.1875 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataObjectsDataContext/CalendarGroup/CalendarGroup_Calendar" />
+      <nodes>
+        <classShapeMoniker Id="f149cef4-6457-4c5f-9c14-599900929be4" />
+        <classShapeMoniker Id="123c72be-0f63-4172-a586-784d84e33fd6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.25 : 2.88025024414063); (3.625 : 2.88025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataObjectsDataContext/Calendar/Calendar_CalendarTroopConnection" />
+      <nodes>
+        <classShapeMoniker Id="123c72be-0f63-4172-a586-784d84e33fd6" />
+        <classShapeMoniker Id="ec3b6665-7c05-4535-adbf-e92d64ce6963" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4143bdad-9875-41e1-a719-651664cbc0e7" absoluteBounds="6, 2.25, 2, 1.26050048828125">
+      <DataClassMoniker Name="/DataObjectsDataContext/Ois_Troop" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b98e98b-e4a5-4484-84a1-37590833cd6a" absoluteBounds="6.015, 2.71, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6 : 2.88025024414063); (5.625 : 2.88025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataObjectsDataContext/Ois_Troop/Ois_Troop_CalendarTroopConnection" />
+      <nodes>
+        <classShapeMoniker Id="4143bdad-9875-41e1-a719-651664cbc0e7" />
+        <classShapeMoniker Id="ec3b6665-7c05-4535-adbf-e92d64ce6963" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+	* Default preference is used when specific customer not has any preference
+	* Use only the values which is different in a customer preference-file. 
+		All attributes in a tag has not to be set in a customer file
+-->
+<preference>
+	<news>
+		<!--daysfromtoday can also be negative-->
+		<publishfrom used="true" daysfromtoday="0" />
+		<publishto used="true" daysfromtoday="30" />
+		<headnews used="false" />
+		<imageuploader used="false" />
+		<registration used="false" />
+		<picture used="false" />
+		<pretext used="false" />
+    <showcreateddate used="true" />
+	</news>
+	<users>
+		<crm_person used="false" />
+		<name used="true" />
+		<verify used="true" />
+		<email used="true" />
+		<mailsignature used="false" name="" url="" />
+		<area used="false" name="" url="" />
+	</users>
+	<intranet>
+		<link used="false" name="" url="" />
+	</intranet>
+	<newsletter>
+		<campaign used="false" />
+		<customsenderaddress used="false" />
+	</newsletter>
+	<content>
+		<!-- urlrewrite options: NOTUSED, NOMASTER, MASTER, DYNAMICANDMASTER -->
+		<directurl used="true" urlrewrite="DYNAMICANDMASTER" />
+    <!-- this is used for pages created before 2010-->
+    <directurl_before2010 used="true" urlrewrite="NOTUSED" />
+		<objectimage used="false" />
+		<templates used="false" />
+		<previewpage used="false" width="1024" height="400" domain="" page="" />
+	</content>
+	<photoalbum>
+		<multiupload used="false" />
+    <imagesize_thumb width="120" height="90" />
+    <imagesize_middle width="550" height="415" />
+    <imagesize_slideshow width="650" height="500" />
+	</photoalbum>
+  <aimnews>
+    <user_Firstname used="true" />
+    <user_Firstnamevalidate used="false" />
+    <user_Lastname used="true" />
+    <user_Lastnamevalidate used="false" />
+    <user_Company used="false" />
+    <user_Companyvalidate used="false" />
+
+    <user_FirstnameColummn used="false" />
+    <user_LastnameColummn used="false" />
+    <user_EmailColummn used="true" />
+    <user_CompanyColummn used="false" />
+    <maillist_StatisticsColummn used="true" />
+  </aimnews>
+  <sitestylesetting>
+    <style_visible used="false" />
+  </sitestylesetting>
+  <relativelinks>
+    <relative_visible used="false" />
+  </relativelinks>
+  <aimform>
+    <externalconnection used="false" />
+  </aimform>
+</preference>

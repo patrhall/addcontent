@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <system.web>
+    <pages>
+      <controls>
+        <add tagPrefix="rad" namespace="Telerik.Web.UI" assembly="Telerik.Web.UI" />		
+      </controls>
+    </pages>
+    <httpHandlers>
+		<add verb="*" path="Telerik.RadUploadProgressHandler.ashx" type="Telerik.Web.UI.RadUploadProgressHandler, Telerik.Web.UI" />		
+    </httpHandlers>
+  </system.web>
+</configuration>
+

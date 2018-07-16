@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+	<contenttitle value="Redigera bilder" />
+	<contentdescription value="Här redigeras dina bilder som ligger i tiltviewern. För att lägga till ny bild, klicka på lägg till ny bild och ladda upp en ny.
+						Man kan också ändra ordningen på hur bilderna kommer att visas. Flytta bilderna upp och ner med knapparna i tabellen. Det går självklart
+						att ta bort samt ändra befintligta bilder." />
+</language>

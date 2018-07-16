@@ -1,0 +1,48 @@
+﻿body
+{
+	background-color:White;
+}
+
+#login_div_wholebox
+{
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	
+	margin-top:60px;
+	
+	width:432px;
+}
+
+#login_div_loginbox
+{
+	background-image:url('/Images/login/login_bg.jpg');
+	background-repeat:no-repeat;
+	
+	height:304px;
+	width:432px;
+	
+	/*top,right,bottom,left*/
+	padding:120px 15px 15px 50px;		
+	
+	text-align:left;
+}
+
+#login_div_toplogo
+{
+	text-align:right;
+	width:100%;
+	padding-right:20px;
+}
+
+#login_tbl_bottom
+{
+	width:80%;
+	
+	margin-top:15px;
+}
+
+.login_td_description
+{
+	width:30%;
+}

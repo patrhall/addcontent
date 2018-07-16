@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Grupper" />
+  <contentdescription value="Här visas en lista på alla grupper. Här kan man redigera, ta bort och skapa nya grupper." />
+  <noRecordText value="Grupper saknas" />
+  <lbNewGroup value="Skapa ny grupp" />
+  <newGroupTooltip value="Ny grupp" />
+  <delGroupConfirm value="Ta bort grupp. Är du säker?" />
+  <btSave value="Spara" />
+</language>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Bildarkiv - redigering" />
+  <contentdescription value="Här kan du administrera fotoalbumet. Inom ramen finns generella inställningar för hela albumet. Under finner du en uppladdningsknapp samt alla bilder som är uppladdade. För att välja omslag för albumet klickar du på ögat. Du kan också sortera enskilda bilder med pilarna, lägga till en bildkommentar, samt ta bort bilder." />
+  <lblCategoryName value="Albumsnamn" />
+  <lblCategoryComment value="Kommentar" />
+  <hpBack value="&lt;img border='o' src='/Images/arrow_left_grey.gif' title='Gå tillbaka.' /&gt;" />
+  <btnCategoryName value="Uppdatera" />
+  <lblRoleTitle value="Visa för följande roller" />
+  <btRoles value="Spara rolltillhörighet" />
+  <lblPicTitle value="Bilder i album" />
+  <lblPicDescription value="Du måste klicka på spara för att uppdatera kommentarerna för bilderna. De andra egenskaperna uppdateras direkt." />
+  <btnSavePicCom value="Spara kommentarer" />
+  <btnSavePic value="Spara kommentarer" />
+  <gvItems_up value="&lt;img border='o' src='/Images/arrow_up.gif' title='Flytta bilden uppåt' alt='Flytta bilden uppåt' /&gt;" />
+  <gvItems_down value="&lt;img border='o' src='/Images/arrow_down.gif' title='Flytta bilden neråt' alt='Flytta bilden neråt' /&gt;" />
+  <gvItems_cover value="&lt;img border='o' src='/Images/view.jpg' title='Sätt som Album omslag' alt='Sätt som Album omslag' /&gt;" />
+  <gvItems_del value="&lt;img border='o' src='/Images/delete.gif' alt='' title='Radera bild' alt='Radera bild' /&gt;" />
+  <hpUploadPics value="Ladda upp bilder till album" />
+</language>

@@ -1,0 +1,33 @@
+﻿.published
+{
+	color:Green;
+}
+
+.outdated
+{
+	color:Red;
+}
+
+.notpublic
+{
+	color:Gray;
+}
+
+.ddLanguage_table
+{
+	width:100%;
+	cursor:pointer;
+}
+
+.ddLanguage_img
+{
+	width:30px;
+}
+
+.ddLanguage_text
+{
+	vertical-align:middle;
+	
+	font-size:12px;
+	font-weight:bold;
+}

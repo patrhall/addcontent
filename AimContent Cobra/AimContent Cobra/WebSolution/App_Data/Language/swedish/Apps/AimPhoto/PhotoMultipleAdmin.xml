@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Ladda upp bilder till album" />
+  <contentdescription value="Här kan du ladda upp enskilda bilder eller hela mappar till ditt bildarkiv. Bildformat som stöds är jpg/jpeg/gif/png. Laddar du upp en hel mapp kan även andra filer synas i listan, men de sparas inte i bildarkivet. När du är färdig klickar du på tillbaka." />
+  <lblError value="Sidan är anropad på ett ej korrekt sätt! Var vänlig och försök igen" />
+  <submitbtn value="Ladda upp" />
+  <hpBack value="&lt;img border='o' src='/Images/arrow_left_grey.gif' title='Gå tillbaka.' /&gt; Tillbaka" />
+</language>

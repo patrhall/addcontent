@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Pictures - Upload pictures to albums" />
+  <contentdescription value="Here you can upload pictures to the album by selecting them on your local computer. When you are finished click 'back'" />
+  <btnSubmit value="Transfer files" />
+  <hpBack value="&lt;img border='o' src='/Images/arrow_left_grey.gif' style='vertical-align:middle;' title='Back' /&gt; Back" />
+</language>

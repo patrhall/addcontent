@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ModulSystem" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=aimitutv3;Initial Catalog=ModulSystem;User ID=sa" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="ModulSystemConnectionString4" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Languages" Member="Languages">
+    <Type Name="Language">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Language" Member="Language1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AimContentLanguageId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Language_Car" Member="Cars" ThisKey="Id" OtherKey="Language_FK" Type="Car" />
+      <Association Name="Language_Interior" Member="Interiors" ThisKey="Id" OtherKey="Language_FK" Type="Interior" />
+      <Association Name="Language_Dimension" Member="Dimensions" ThisKey="Id" OtherKey="Language_FK" Type="Dimension" />
+      <Association Name="Language_Article" Member="Articles" ThisKey="Id" OtherKey="Language_FK" Type="Article" />
+      <Association Name="Language_Article_X_LanguageExclude" Member="Article_X_LanguageExcludes" ThisKey="Id" OtherKey="Language_FK" Type="Article_X_LanguageExclude" />
+      <Association Name="Language_Article_X_Language" Member="Article_X_Languages" ThisKey="Id" OtherKey="Language_FK" Type="Article_X_Language" />
+      <Association Name="Language_ArticleGroup_X_Language" Member="ArticleGroup_X_Languages" ThisKey="Id" OtherKey="Language_FK" Type="ArticleGroup_X_Language" />
+      <Association Name="Language_Dimension_X_Language" Member="Dimension_X_Languages" ThisKey="Id" OtherKey="Language_FK" Type="Dimension_X_Language" />
+      <Association Name="Language_ArticleGroup" Member="ArticleGroups" ThisKey="Id" OtherKey="Language_FK" Type="ArticleGroup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CarAxles" Member="CarAxles">
+    <Type Name="CarAxle">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CarModel_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="CarAxle_Interior_X_Article" Member="Interior_X_Articles" ThisKey="Id" OtherKey="CarAxle_FK" Type="Interior_X_Article" />
+      <Association Name="CarAxle_Interior_X_CarAxle" Member="Interior_X_CarAxles" ThisKey="Id" OtherKey="CarAxle_FK" Type="Interior_X_CarAxle" />
+      <Association Name="CarModel_CarAxle" Member="CarModel" ThisKey="CarModel_FK" OtherKey="Id" Type="CarModel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CarModels" Member="CarModels">
+    <Type Name="CarModel">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Car_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="CarModel_CarAxle" Member="CarAxles" ThisKey="Id" OtherKey="CarModel_FK" Type="CarAxle" />
+      <Association Name="Car_CarModel" Member="Car" ThisKey="Car_FK" OtherKey="Id" Type="Car" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cars" Member="Cars">
+    <Type Name="Car">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Language_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="Car_CarModel" Member="CarModels" ThisKey="Id" OtherKey="Car_FK" Type="CarModel" />
+      <Association Name="Language_Car" Member="Language" ThisKey="Language_FK" OtherKey="Id" Type="Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Interior_X_Article" Member="Interior_X_Articles">
+    <Type Name="Interior_X_Article">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Interior_FK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarAxle_FK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InteriorArticleType_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleNumber" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NumberOfArticles" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CarAxle_Interior_X_Article" Member="CarAxle" ThisKey="CarAxle_FK" OtherKey="Id" Type="CarAxle" IsForeignKey="true" />
+      <Association Name="InteriorArticleType_Interior_X_Article" Member="InteriorArticleType" ThisKey="InteriorArticleType_FK" OtherKey="Id" Type="InteriorArticleType" IsForeignKey="true" />
+      <Association Name="Interior_Interior_X_Article" Member="Interior" ThisKey="Interior_FK" OtherKey="Id" Type="Interior" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Interior_X_CarAxle" Member="Interior_X_CarAxles">
+    <Type Name="Interior_X_CarAxle">
+      <Column Name="Interior_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CarAxle_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="CarAxle_Interior_X_CarAxle" Member="CarAxle" ThisKey="CarAxle_FK" OtherKey="Id" Type="CarAxle" IsForeignKey="true" />
+      <Association Name="Interior_Interior_X_CarAxle" Member="Interior" ThisKey="Interior_FK" OtherKey="Id" Type="Interior" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InteriorArticleTypes" Member="InteriorArticleTypes">
+    <Type Name="InteriorArticleType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="InteriorArticleType_Interior_X_Article" Member="Interior_X_Articles" ThisKey="Id" OtherKey="InteriorArticleType_FK" Type="Interior_X_Article" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Interiors" Member="Interiors">
+    <Type Name="Interior">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Language_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InteriorNumber" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Width" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Height" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Depth" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FittingInstructions" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Interior_Interior_X_Article" Member="Interior_X_Articles" ThisKey="Id" OtherKey="Interior_FK" Type="Interior_X_Article" />
+      <Association Name="Interior_Interior_X_CarAxle" Member="Interior_X_CarAxles" ThisKey="Id" OtherKey="Interior_FK" Type="Interior_X_CarAxle" />
+      <Association Name="Language_Interior" Member="Language" ThisKey="Language_FK" OtherKey="Id" Type="Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dimensions" Member="Dimensions">
+    <Type Name="Dimension">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Language_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Association Name="Dimension_Article" Member="Articles" ThisKey="Id" OtherKey="Dimension_FK" Type="Article" />
+      <Association Name="Dimension_Dimension_X_Language" Member="Dimension_X_Languages" ThisKey="Id" OtherKey="Dimension_FK" Type="Dimension_X_Language" />
+      <Association Name="Language_Dimension" Member="Language" ThisKey="Language_FK" OtherKey="Id" Type="Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Articles" Member="Articles">
+    <Type Name="Article">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Language_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleGroup_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dimension_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleNumber" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ImageName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Width" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Depth" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InstallationInstructionName" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="PreviewImageName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ArticleName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ArticleDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Article_Article_X_LanguageExclude" Member="Article_X_LanguageExcludes" ThisKey="Id" OtherKey="Article_FK" Type="Article_X_LanguageExclude" />
+      <Association Name="Article_Article_X_Language" Member="Article_X_Languages" ThisKey="Id" OtherKey="Article_FK" Type="Article_X_Language" />
+      <Association Name="Article_ArticleRelation" Member="ArticleRelations" ThisKey="Id" OtherKey="Article_FK" Type="ArticleRelation" />
+      <Association Name="Dimension_Article" Member="Dimension" ThisKey="Dimension_FK" OtherKey="Id" Type="Dimension" IsForeignKey="true" />
+      <Association Name="Language_Article" Member="Language" ThisKey="Language_FK" OtherKey="Id" Type="Language" IsForeignKey="true" />
+      <Association Name="ArticleGroup_Article" Member="ArticleGroup" ThisKey="ArticleGroup_FK" OtherKey="Id" Type="ArticleGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Article_X_LanguageExcludes" Member="Article_X_LanguageExcludes">
+    <Type Name="Article_X_LanguageExclude">
+      <Column Name="Article_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Language_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Article_Article_X_LanguageExclude" Member="Article" ThisKey="Article_FK" OtherKey="Id" Type="Article" IsForeignKey="true" />
+      <Association Name="Language_Article_X_LanguageExclude" Member="Language" ThisKey="Language_FK" OtherKey="Id" Type="Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Article_X_Languages" Member="Article_X_Languages">
+    <Type Name="Article_X_Language">
+      <Column Name="Article_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Language_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ArticleName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ArticleDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Article_Article_X_Language" Member="Article" ThisKey="Article_FK" OtherKey="Id" Type="Article" IsForeignKey="true" />
+      <Association Name="Language_Article_X_Language" Member="Language" ThisKey="Language_FK" OtherKey="Id" Type="Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArticleGroup_X_Languages" Member="ArticleGroup_X_Languages">
+    <Type Name="ArticleGroup_X_Language">
+      <Column Name="Language_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ArticleGroup_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="Language_ArticleGroup_X_Language" Member="Language" ThisKey="Language_FK" OtherKey="Id" Type="Language" IsForeignKey="true" />
+      <Association Name="ArticleGroup_ArticleGroup_X_Language" Member="ArticleGroup" ThisKey="ArticleGroup_FK" OtherKey="Id" Type="ArticleGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dimension_X_Language" Member="Dimension_X_Languages">
+    <Type Name="Dimension_X_Language">
+      <Column Name="Language_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Dimension_FK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Association Name="Dimension_Dimension_X_Language" Member="Dimension" ThisKey="Dimension_FK" OtherKey="Id" Type="Dimension" IsForeignKey="true" />
+      <Association Name="Language_Dimension_X_Language" Member="Language" ThisKey="Language_FK" OtherKey="Id" Type="Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArticleGroups" Member="ArticleGroups">
+    <Type Name="ArticleGroup">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Language_FK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ArticleGroup_FK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="ArticleGroup_Article" Member="Articles" ThisKey="Id" OtherKey="ArticleGroup_FK" Type="Article" />
+      <Association Name="ArticleGroup_ArticleGroup_X_Language" Member="ArticleGroup_X_Languages" ThisKey="Id" OtherKey="ArticleGroup_FK" Type="ArticleGroup_X_Language" />
+      <Association Name="ArticleGroup_ArticleGroup" Member="ArticleGroup2" ThisKey="Id" OtherKey="Id" Type="ArticleGroup" Cardinality="One" />
+      <Association Name="ArticleGroup_ArticleGroup" Member="ArticleGroup1" ThisKey="Id" OtherKey="Id" Type="ArticleGroup" IsForeignKey="true" />
+      <Association Name="Language_ArticleGroup" Member="Language" ThisKey="Language_FK" OtherKey="Id" Type="Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArticleRelations" Member="ArticleRelations">
+    <Type Name="ArticleRelation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Language_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentArticle_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsRelation" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PlaceHolderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Article_FK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="Article_ArticleRelation" Member="Article" ThisKey="Article_FK" OtherKey="Id" Type="Article" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

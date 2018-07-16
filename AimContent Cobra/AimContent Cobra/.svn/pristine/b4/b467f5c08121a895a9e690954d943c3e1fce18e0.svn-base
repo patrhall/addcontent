@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>  
+	<contenttitle value="Ads" />
+	<contentdescription value="Choose the group that you want to edit in the dropdown. 
+	It is possible to change the order of the ads by using the arrows. 
+	To edit an ad, click the pen, to delete it click the bin. 
+	To the right of the dropdown menu there is an icon for creating a new ad in the choosen list (a list must be selected for the icon to show)." />
+</language>

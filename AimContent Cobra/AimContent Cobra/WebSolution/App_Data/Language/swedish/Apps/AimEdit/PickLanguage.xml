@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Språkväljare" />
+  <contentdescription value="Denna sidtyp används för att välja mellan olika språk på webbplatsen." />
+  <lbPreference value="Redigera sidegenskaper" />
+
+  <language1 value="Svenska" />
+  <language2 value="Engelska" />
+  <language3 value="Koreanska" />
+  <language4 value="Thailändska" />
+  <language5 value="Danska" />
+  <language6 value="Tyska" />
+  <language7 value="Italienska" />
+</language>

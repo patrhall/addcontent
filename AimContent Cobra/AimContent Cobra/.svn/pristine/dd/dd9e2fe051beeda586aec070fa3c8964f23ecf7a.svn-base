@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Tagg" />
+  <contentdescription value="Fyll i taggens uppgifter" />
+  <lblTagName value="Taggnamn" />
+  <lblTagSlug value="Kortnamn" />
+  <lblTagType value="Typ" />
+  <btnSave value="Spara" />
+  <lblChooseTagType value="Välj taggtyp" />  
+</language>

@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{272F3886-90D0-4612-B2AC-58A71439127C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIM.Business</RootNamespace>
+    <AssemblyName>Business</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AimAdministrator\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimAds\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimApp\DataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimBusiness\AimFor2022\Website\DataObjects.designer.cs">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="AimBusiness\CongrexAPP\Website\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimBusiness\Mekpoint\Website\AimContent\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimBusiness\Mekpoint\Website\Mekpoint\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimBusiness\ModulSystem\Website\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimBusiness\ProceduralRacing\Website\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimBusiness\Timberbridge\Website\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimBusiness\Tjuge22\Website\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimBusiness\Whiskyflaskan\Website\DataObjects.cs">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimBusiness\Whiskyflaskan\Website\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimCalendar\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimEdit\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimForm\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimNews\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimPhoto\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimSiteNews\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimStats\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimTags\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AimUsers\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="General\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Providers\AimCobraMembershipProvider.cs" />
+    <Compile Include="Providers\AimCobraProfileProvider.cs" />
+    <Compile Include="Providers\AimCobraRoleProvider.cs" />
+    <Compile Include="WebSolution\DataObjects.cs">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="WebSolution\DataObjects.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimApp\DataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimBusiness\CongrexAPP\Website\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimBusiness\Mekpoint\Website\AimContent\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimBusiness\Mekpoint\Website\Mekpoint\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimBusiness\ModulSystem\Website\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimBusiness\ProceduralRacing\Website\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimBusiness\Timberbridge\Website\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimBusiness\Whiskyflaskan\Website\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimTags\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WebSolution\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimAdministrator\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="WebSolution\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimAdministrator\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+    <None Include="AimEdit\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimEdit\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+    <None Include="General\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimSiteNews\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="General\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimNews\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimSiteNews\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimNews\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+    <None Include="AimPhoto\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimBusiness\Tjuge22\Website\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimPhoto\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimBusiness\AimFor2022\Website\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimBusiness\Tjuge22\Website\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimBusiness\AimFor2022\Website\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+    <None Include="AimUsers\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimStats\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimUsers\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimAds\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AimStats\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimAds\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+    <None Include="AimCalendar\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimCalendar\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+    <None Include="AimForm\DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimForm\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+    <None Include="DataObjects.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataObjects.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimTags\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimBusiness\Whiskyflaskan\Website\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimBusiness\ProceduralRacing\Website\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimBusiness\Timberbridge\Website\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimBusiness\ModulSystem\Website\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimApp\DataClasses.dbml.layout">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimBusiness\Mekpoint\Website\Mekpoint\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimBusiness\Mekpoint\Website\AimContent\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AimBusiness\CongrexAPP\Website\DataObjects.dbml.layout">
+      <DependentUpon>DataObjects.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

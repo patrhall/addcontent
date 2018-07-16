@@ -1,0 +1,72 @@
+﻿body
+{
+	font-family:Verdana;
+	font-size:11px;	
+	color:Black;
+}
+
+a
+{
+	color:Red;
+	text-decoration:none;
+}
+
+img
+{
+	border-width:0px;
+}
+
+table
+{	
+	font-family:Verdana;
+	font-size:11px;	
+	color:Black;
+}
+
+/* GENERAL PROPERTIES */
+.itemstyle
+{
+	font-size:11px;
+}
+
+.text_center
+{
+	text-align:center;
+}
+
+.lightgray_noalign
+{
+	background-color:#DDDDDD;	
+}
+
+/* Radcontrols */
+.radrow_style
+{
+	text-align:left;
+	background-color:#E9E9E9;
+}
+.radrow_alter_style
+{		
+	text-align:left;
+	background-color:#BABABA;
+}
+
+/* table styles */
+td.lightgray
+{
+	background-color:#DDDDDD;
+	
+	vertical-align:top;
+	text-align:left;
+}
+
+td.white
+{
+	background-color:White;
+	
+	vertical-align:top;
+	text-align:left;
+}
+
+
+

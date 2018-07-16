@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Pictures - create album" />
+  <contentdescription value="Here you can create an album. Leave the date field empty to save the album with todays date. When you save you will redirected to the upload page." />
+  <lblDate value="Date:" />
+  <lblCategory value="Name:"  />
+  <lblComment value="Comment:" />
+  <btCategoryName value="Save" />
+  <lblMsg value="You need to set a name on the category." />
+  <hpBack value="&lt;img border='o' src='/Images/arrow_left_grey.gif' title='Back' alt='Back' /&gt;" />
+</language>

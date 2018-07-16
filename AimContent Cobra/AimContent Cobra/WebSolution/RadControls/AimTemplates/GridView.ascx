@@ -1,0 +1,2 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="GridView.ascx.cs" Inherits="RadControls_AimTemplates_GridView" %>
+<%@ Register TagPrefix="rad" Namespace="Telerik.WebControls" Assembly="RadGrid"%>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <lblAdminUserName value="Välkommen" />
+  <lblSiteName value="Webbplats:" />
+
+  <module0 value="Översikt" />
+  <module1 value="Redigering" />
+  <module2 value="Administratörer" />
+  <module3 value="Annonser" />
+  <module4 value="Nyhetsbrev" />
+  <module5 value="Forum" />
+  <module6 value="Tidbokning" />
+  <module7 value="Kalender" />
+  <module8 value="Shop" />
+  <module9 value="AimWalk" />
+  <module10 value="Filarkiv" />
+  <module11 value="Användare" />
+  <module12 value="Statistik" />
+  <module13 value="Husfest" />
+  <module15 value="Medlemsutskick" />
+  <module16 value="Roller" />
+  <module17 value="AimSurvey Connect" />
+  <module18 value="Annonser" />
+  <module20 value="Besökstatistik" />
+  <module21 value="Intranät" />
+  <module23 value="Webbplatsteman" />
+  <module24 value="Formulär" />
+  <module25 value="Lägenheter" />
+  <module26 value="Aimsurvey Web" />
+  <module27 value="Veckans fråga" />
+  <module28 value="Företag" />
+  <module29 value="Produktregister" />
+  <module30 value="Användare" />
+  <module31 value="AimRotator" />
+  <module32 value="Dokumentarkiv" />
+  <module33 value="Kalendrar" />
+  <module34 value="Taggar" />
+</language>

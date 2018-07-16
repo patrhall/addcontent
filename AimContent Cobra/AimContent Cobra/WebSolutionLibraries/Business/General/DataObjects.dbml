@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Aimit_Aim" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;Persist Security Info=True;User ID=aimit_aim" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="Aimit_AimConnectionString3" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Module" Member="Modules">
+    <Type Name="Module">
+      <Column Name="ModuleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ModuleName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UseLeftMenu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UserControlName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ObjectType" Member="ObjectTypes">
+    <Type Name="ObjectType">
+      <Column Name="ObjectTypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ObjectType" Member="ObjectType1" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="VisibleInList" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="AimContentURL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="commentsAboutOT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="ObjectType_Object" Member="Objects" ThisKey="ObjectTypeID" OtherKey="ObjectTypeID" Type="Object" />
+      <Association Name="ObjectType_SiteObjectType" Member="SiteObjectTypes" ThisKey="ObjectTypeID" OtherKey="ObjectTypeID" Type="SiteObjectType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Roles" Member="aspnet_Roles">
+    <Type Name="aspnet_Role">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredRoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="aspnet_Application_aspnet_Role" Member="aspnet_Application" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Applications" Member="aspnet_Applications">
+    <Type Name="aspnet_Application">
+      <Column Name="ApplicationName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredApplicationName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="aspnet_Application_aspnet_Role" Member="aspnet_Roles" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Role" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Object" Member="Objects">
+    <Type Name="Object">
+      <Column Name="ObjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Structure" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Slug" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IntroText" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="HTMLContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MetaTitle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MetaKeywords" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="MetaDescription" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastChanged" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Sortorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Alt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="ObjectTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LangID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ObjectKey" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ListID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PublishFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PublishTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LinkTarget" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Visits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SecureObject" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TrashedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UploadedImagePath" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="VisibleInMenu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Object_Object_X_AdminRole" Member="Object_X_AdminRoles" ThisKey="ObjectID" OtherKey="ObjectId" Type="Object_X_AdminRole" />
+      <Association Name="ObjectType_Object" Member="ObjectType" ThisKey="ObjectTypeID" OtherKey="ObjectTypeID" Type="ObjectType" IsForeignKey="true" />
+      <Association Name="Site_Object" Member="Site" ThisKey="SiteID" OtherKey="SiteID" Type="Site" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiteObjectType" Member="SiteObjectTypes">
+    <Type Name="SiteObjectType">
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ObjectTypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ObjectTypeURL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UseLongURL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ObjectType_SiteObjectType" Member="ObjectType" ThisKey="ObjectTypeID" OtherKey="ObjectTypeID" Type="ObjectType" IsForeignKey="true" />
+      <Association Name="Site_SiteObjectType" Member="Site" ThisKey="SiteID" OtherKey="SiteID" Type="Site" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Site" Member="Sites">
+    <Type Name="Site">
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ConfigID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Site_Object" Member="Objects" ThisKey="SiteID" OtherKey="SiteID" Type="Object" />
+      <Association Name="Site_SiteObjectType" Member="SiteObjectTypes" ThisKey="SiteID" OtherKey="SiteID" Type="SiteObjectType" />
+      <Association Name="Site_Admin" Member="Admins" ThisKey="SiteID" OtherKey="siteID" Type="Admin" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdminRoles" Member="AdminRoles">
+    <Type Name="AdminRole">
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AdminID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Admin_AdminRole" Member="Admin" ThisKey="AdminID" OtherKey="ID" Type="Admin" IsForeignKey="true" />
+      <Association Name="Role_AdminRole" Member="Role" ThisKey="RoleID" OtherKey="ID" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admin" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="firstname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lastname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="siteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdminLanguage_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Admin_AdminRole" Member="AdminRoles" ThisKey="ID" OtherKey="AdminID" Type="AdminRole" />
+      <Association Name="Site_Admin" Member="Site" ThisKey="siteID" OtherKey="SiteID" Type="Site" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Role">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Role_AdminRole" Member="AdminRoles" ThisKey="ID" OtherKey="RoleID" Type="AdminRole" />
+      <Association Name="Role_Object_X_AdminRole" Member="Object_X_AdminRoles" ThisKey="ID" OtherKey="RoleId" Type="Object_X_AdminRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Object_X_AdminRoles" Member="Object_X_AdminRoles">
+    <Type Name="Object_X_AdminRole">
+      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ObjectId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Object_Object_X_AdminRole" Member="Object" ThisKey="ObjectId" OtherKey="ObjectID" Type="Object" IsForeignKey="true" />
+      <Association Name="Role_Object_X_AdminRole" Member="Role" ThisKey="RoleId" OtherKey="ID" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.usp_Aim_GetSiteObjectTypes" Method="usp_Aim_GetSiteObjectTypes">
+    <Parameter Name="SiteID" Parameter="siteID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ObjectTypeID" Parameter="objectTypeID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Aim_GetSiteObjectTypesResult">
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ObjectTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ObjectTypeURL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UseLongURL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_GetObjectRoles" Method="usp_GetObjectRoles">
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetObjectRolesResult">
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_SavePublishDates" Method="usp_SavePublishDates">
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PublishFrom" Parameter="publishFrom" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PublishTo" Parameter="publishTo" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_DeleteObjectRoles" Method="usp_DeleteObjectRoles">
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_GetRoleID" Method="usp_GetRoleID">
+    <Parameter Name="RoleName" Parameter="roleName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ApplicationName" Parameter="applicationName" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="usp_GetRoleIDResult">
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_SaveObjectRoles" Method="usp_SaveObjectRoles">
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_SaveTextMeta" Method="usp_SaveTextMeta">
+    <Parameter Name="Title" Parameter="title" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Keywords" Parameter="keywords" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_SaveTextMetaResult">
+      <Column Name="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_SaveObject" Method="usp_SaveObject">
+    <Parameter Name="Topic" Parameter="topic" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="Text" Parameter="text" Type="System.String" DbType="NText" />
+    <Parameter Name="Created" Parameter="created" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ObjectTypeID" Parameter="objectTypeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Active" Parameter="active" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SiteID" Parameter="siteID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LangID" Parameter="langID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ObjectKey" Parameter="objectKey" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="LinkTarget" Parameter="linkTarget" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="SecureObject" Parameter="secureObject" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="UploadedImagePath" Parameter="uploadedImagePath" Type="System.String" DbType="NVarChar(400)" />
+    <ElementType Name="usp_SaveObjectResult">
+      <Column Name="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Object_SaveTemplate" Method="usp_Object_SaveTemplate">
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TemplateID" Parameter="templateID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_GetObject" Method="usp_GetObject">
+    <Parameter Name="SiteID" Parameter="siteID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ObjectID" Parameter="objectID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GetObjectResult">
+      <Column Name="ObjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Structure" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IntroText" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="HTMLContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MetaTitle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MetaKeywords" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="MetaDescription" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastChanged" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Sortorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Alt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="ObjectTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LangID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ObjectKey" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ListID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PublishFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PublishTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LinkTarget" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Visits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SecureObject" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TrashedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UploadedImagePath" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="VisibleInMenu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_SaveObjectVisibleInMenu" Method="usp_SaveObjectVisibleInMenu">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VisibleInMenu" Parameter="visibleInMenu" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="usp_SaveObjectVisibleInMenuResult">
+      <Column Name="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

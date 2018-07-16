@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+	<lblHeadTitle value="Sidegenskaper" />
+	<lblHeadDescription value="Här finner du inställningar för just denna sida. Om du önskar att göra generella ändringar så görs det på webbplatsinställningar. När du har gjort dina förändringar klickar du på spara så kommer du tillbaka till sidan igen." />
+	<lblUrlTitle value="Länk" />
+  <lblSlugTitle value="Länktitel/kort titel" />
+	<lblUrlDescription value="Här visas en direktlänk till sidan." />
+	<lblRolesTitle value="Roller" />
+	<lblRolesDescription value="Välj vilka roller som ska kunna se sidan." />
+	<lblPublishTitle value="Publicering" />
+	<lblPublishDescription value="Om man vill kan man sätta mellan vilka datum som sidan ska vara publicerad. Vill man inte använda publiceringsdatum så klickar man ur rutan nedan så kommer inte datumen att sparas för sidan." />
+	<lblMetaHeadTitle value="Beskrivning" />
+	<lblMetaHeadDescription value="Om man vill att sidans titel, beskrivning och nyckelord ska vara specifika för den enskilda sidan skriver man det här. Anger man inget används texten från startsidan." />
+	<lblMetaTitle value="Sidans titel (visas i webbläsarens titelrad):" />
+	<lblMetaKeywords value="Nyckelord (för sökmotorer), separera med komma:" />
+	<lblMetaDescription value="Kort beskrivning (för sökmotorer):" />
+	<btSave value="Spara inställningar" />
+	<cbUsePublicationDate value="Använd publiceringsdatum" />
+	<lblPublishFrom value="Sidan publicerad från:" />
+	<lblPublishTo value="Sidan publicerad till:" />
+	<lblShowInMenuTitle value="Menysynlighet" />
+	<lblShowInMenuDescription value="Här sätts synligheten för sidan i menyn. Om kryssrutan är ikryssad visas sidan i menyn" />
+	<cbShowInMenu value="Visa sida i menyn" />
+  <lblCreatedDateTitle value="Datum skapat" />
+  <lblCreatedDateDescription value="Visar när sidan skapades. Kan i vissa fall användas för sortering i nyhetslistor." />
+  <lblCreatedDate value="Välj datum:" />
+</language>

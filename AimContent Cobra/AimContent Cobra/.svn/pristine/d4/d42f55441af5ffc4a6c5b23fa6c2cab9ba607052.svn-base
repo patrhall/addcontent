@@ -1,0 +1,5 @@
+﻿<%--
+General for whole AimContent
+--%>
+
+<asp:button runat="server" BackColor="#666699" ForeColor="White" BorderStyle="Solid" BorderColor="Black" BorderWidth="1px" Font-Names="Verdana" />

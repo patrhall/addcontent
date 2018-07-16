@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+    <contenttitle value="Products" />
+    <contentdescription value="This is where the products are administered. It is possible to upload an Excel file using a specified format or edit items individually. Where the product should be found on the site can be changed by submitting an url. For example, 'ext_units' as url would result in modul-system.com/se/products/ext_units. The description is text shown for every product group and is specific to each language." />
+    <hlUploadProductExcel value="Upload an Excel file containing product information" />
+</language>

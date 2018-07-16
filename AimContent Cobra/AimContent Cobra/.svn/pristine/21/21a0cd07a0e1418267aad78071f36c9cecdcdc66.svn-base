@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+    </configSections>
+    <connectionStrings>
+        <add name="AIM.Business.Properties.Settings.Aimit_AimConnectionString"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;Integrated Security=True"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_AimConnectionString2"
+            connectionString="Data Source=192.168.0.3;Initial Catalog=Aimit_Aim;Persist Security Info=True;User ID=Aimit_Aim"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_AimConnectionString1"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;Persist Security Info=True;User ID=Aimit_Aim;Password=cmstilltusen"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_AimConnectionString3"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;Persist Security Info=True;User ID=aimit_aim;Password=cmstilltusen"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_AimConnectionString4"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;Persist Security Info=True;User ID=aimit_aim;Password=cmstilltusen"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_AimConnectionString5"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;Persist Security Info=True;User ID=Aimit_aim"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_AimConnectionString6"
+            connectionString="Data Source=192.168.0.3;Initial Catalog=Aimit_Aim;Persist Security Info=True;User ID=aimit_aim;Password=cmstilltusen"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_AimConnectionString7"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;Persist Security Info=True;User ID=aimit_aim"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_OISConnectionString"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_OIS;Integrated Security=True"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_AimConnectionString8"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;User ID=aimit_aim;Password=cmstilltusen"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.AimContent_RevisorsRingenConnectionString"
+            connectionString="Data Source=aimit1;Initial Catalog=AimContent_RevisorsRingen;Persist Security Info=True;User ID=sa;Password=5e,G4_R"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.ProceduralConnectionString"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=Procedural;User ID=sa;Password=SqPwar75_?_"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.ProceduralConnectionString1"
+            connectionString="Data Source=aimit1;Initial Catalog=Procedural;User ID=sa;Password=5e,G4_R"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.AimContentConnectionString"
+            connectionString="Data Source=aimit1;Initial Catalog=AimContent;User ID=sa;Password=5e,G4_R"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.AimContentConnectionString1"
+            connectionString="Data Source=aimit1;Initial Catalog=AimContent;User ID=aimcontent;Password=jit38#L%"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.AimContentConnectionString2"
+            connectionString="Data Source=aimit1;Initial Catalog=AimContent;User ID=aimcontent"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_AimConnectionString9"
+            connectionString="Data Source=192.168.0.3;Initial Catalog=Aimit_Aim;Persist Security Info=True;User ID=sa;Password=SqPwar75_?_"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.ModulSystemConnectionString"
+            connectionString="Data Source=192.168.0.3;Initial Catalog=ModulSystem;User ID=aimit_aim;Password=cmstilltusen"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_Aim_RunoConnectionString"
+            connectionString="Data Source=aimit1;Initial Catalog=Aimit_Aim_Runo;User ID=Aimit_Aim_Runo;Password=hytbu634vc"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.ModulSystemConnectionString1"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=ModulSystem;User ID=aimit_aim;Password=cmstilltusen"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.ModulSystemConnectionString2"
+            connectionString="Data Source=utv.aimit.se;Initial Catalog=ModulSystem;Persist Security Info=True;User ID=aimit_aim;Password=cmstilltusen"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_AimConnectionString10"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;User ID=sa"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.MekpointConnectionString"
+            connectionString="Data Source=aimit1;Initial Catalog=Mekpoint;Persist Security Info=True;User ID=mekpoint"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.AimContentConnectionString3"
+            connectionString="Data Source=aimit1;Initial Catalog=AimContent;Persist Security Info=True;User ID=aimcontent"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.MekpointConnectionString1"
+            connectionString="Data Source=aimit1;Initial Catalog=Mekpoint;Persist Security Info=True;User ID=sa;Password=5e,G4_R"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.ModulSystemConnectionString3"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=ModulSystem;Integrated Security=True"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.CongrexConnectionString"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=Congrex;User ID=aimit_aim;Password=cmstilltusen"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.ModulSystemConnectionString4"
+            connectionString="Data Source=aimitutv3;Initial Catalog=ModulSystem;User ID=sa;Password=SqPwar75_?_"
+            providerName="System.Data.SqlClient" />
+        <add name="AIM.Business.Properties.Settings.Aimit_AimConnectionString11"
+            connectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;User ID=sa;Password=SqPwar75_?_"
+            providerName="System.Data.SqlClient" />
+    </connectionStrings>
+</configuration>

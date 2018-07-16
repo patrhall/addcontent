@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+	<contenttitle value="Användare på webbplatsen" />
+	<contentdescription value="Här visas en överblick över de användare som är registrerade på webbplatsen." />
+  
+  
+  
+  <lblUserName value="Användarnamn:" />
+  <reqValUsername value="Du måste ange användarnamn" />
+  <lblPassword value="Lösenord:" />
+  <reqValPassword value="Du måste ange lösenord" />
+  <lblEditEmail value="E-post:" />
+  <lblFirstname value="Förnamn:" />
+  <lblLastname value="Efternamn:" />
+  <lblEditVerify value="Verifierad:" />
+  <lblRoles value="Roll:" />
+  <btnSave value="Spara" />
+</language>

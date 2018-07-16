@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Pictures - editing album" />
+  <contentdescription value="Here you can administrate the photo album. Inside the frame there are general settings applied to the entire album. Below you find an uploader button and all pictures uploaded. To pick a cover for the album, click the eye. You can also sort on individual pictures by clicking the arrows, add a picture comment and delete pictures." />
+  <lblCategoryName value="Album name" />
+  <lblCategoryComment value="Comment" />
+  <hpBack value="&lt;img border='o' src='/Images/arrow_left_grey.gif' title='Back.' /&gt;" />
+  <btnCategoryName value="Update" />
+  <lblRoleTitle value="View to following roles" />
+  <btRoles value="Save role belonging." />
+  <lblPicTitle value="Pictures in album." />
+  <lblPicDescription value="You need to click save to update the comments on the pictures. The other properties will be instantly updated." />
+  <btnSavePicCom value="Save comments" />
+  <btnSavePic value="Save comments" />
+  <gvItems_up value="&lt;img border='o' src='/Images/arrow_up.gif' title='Move picture up' alt='Move picture up' /&gt;" />
+  <gvItems_down value="&lt;img border='o' src='/Images/arrow_down.gif' title='Move picture down' alt='Move picture down' /&gt;" />
+  <gvItems_cover value="&lt;img border='o' src='/Images/view.jpg' title='Set as Album cover' alt='Set as Album cover' /&gt;" />
+  <gvItems_del value="&lt;img border='o' src='/Images/delete.gif' alt='' title='Delete picture' alt='Delete picture' /&gt;" />
+  <hpUploadPics value="Upload images to album" />
+</language>

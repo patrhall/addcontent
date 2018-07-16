@@ -1,0 +1,381 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.IO;
+using System.Collections.Generic;
+
+namespace AimSiteNews
+{
+    public partial class CreateSiteNews : AIM.Base.Modules.Page.AimSiteNews
+    {
+        private int textID;
+        private int ListID;
+
+        AIM.General.UserControls.PagePreference pref;
+
+        protected override void Page_Load()
+        {
+            if (config.useAdminRoles && AdministratorAuthentication.IsUserAdmin)
+                editor1.ToolsFile = "/App_Data/RadControls/Editor/ToolsFile_Admin.xml";
+
+            AIM.Base.Classes.RadHandler.RadEditor_LoadEditorPreference(ref editor1, config);
+            loadPagePreference();
+            
+            textID = Convert.ToInt32(Request["ID"]);
+            ListID = Convert.ToInt32(Request["ListID"]);
+            
+            if (!IsPostBack)
+            {
+                cbHeadNews.Visible = Boolean.Parse(Preference.getValue("news", "headnews", "used"));
+                
+                pnlImageUploader.Visible = Boolean.Parse(Preference.getValue("news", "imageuploader", "used"));
+                pnlRegistration.Visible = Boolean.Parse(Preference.getValue("news", "registration", "used"));
+                pnlCurrentImageFile.Visible = Boolean.Parse(Preference.getValue("news", "picture", "used"));
+
+                try
+                {
+                    pnlPreText.Visible = Boolean.Parse(Preference.getValue("news", "pretext", "used"));
+                }
+                catch
+                {
+                    pnlPreText.Visible = false;
+                }
+
+
+                if (Boolean.Parse(Preference.getValue("news", "registration", "used")))
+                    fillRegistrationForm(config.siteID);
+                
+                if (textID != 0)
+                {                    
+                    AIM.Business.AimSiteNews.usp_GetObjectResult theObject = db.usp_GetObject(null, textID).First<AIM.Business.AimSiteNews.usp_GetObjectResult>();
+
+                    if (theObject.SiteID != config.siteID)
+                        throw new Exception("AimSiteNews.CreateSiteNews.aspx error: not authorized to this object");
+
+                    tbTopic.Text = theObject.Title;
+                    tbPreText.Text = theObject.IntroText;
+                    if (!String.IsNullOrEmpty(theObject.UploadedImagePath))
+                    {
+                        lblCurrentNewsImgFile.Text = theObject.UploadedImagePath;
+                        cbDeleteImage.Visible = true;
+                        imgCurrentNewsImg.Visible = true;
+                        imgCurrentNewsImg.ImageUrl = config.customerpath + "news/images/" + theObject.UploadedImagePath;                        
+                    }
+                    
+                    //Need extra stripping if hiddenDocuments
+                    if (!IsPostBack && config.secureEditing != null && config.secureEditing != "")
+                        editor1.Content = theObject.HTMLContent.Replace(config.secureEditing, config.customerpath + config.secureEditing);
+                    else
+                        editor1.Content = theObject.HTMLContent;
+
+                    if (theObject.PublishFrom.HasValue)
+                        pref.setPublishFrom = theObject.PublishFrom.Value;
+
+                    if (theObject.PublishTo.HasValue)
+                        pref.setPublishTo = theObject.PublishTo.Value;
+
+                    if (theObject.Category.HasValue && theObject.Category.Value == 1)
+                        cbHeadNews.Checked = true;                    
+
+                    if (Boolean.Parse(Preference.getValue("news", "registration", "used")))
+                    {
+                        getRegistrationValues(textID);
+                    }
+                    if (Boolean.Parse(Preference.getValue("news", "showcreateddate", "used")))
+                        pref.viewCreatedDatePanel = true;
+                    else
+                        pref.viewCreatedDatePanel = false;
+                }
+                else
+                {
+                    pref.setPublishFrom = DateTime.Now.AddDays(double.Parse(Preference.getValue("news", "publishfrom", "daysfromtoday")));
+                    pref.setPublishTo = DateTime.Now.AddDays(double.Parse(Preference.getValue("news", "publishto", "daysfromtoday")));
+                }
+
+                setPreference(textID);
+            }
+        }
+
+        private void setLanguage()
+        {
+
+        }
+
+        private void loadPagePreference()
+        {
+            Control controlPagePreference = LoadControl("/General/UserControls/PagePreference.ascx");
+            pref = (AIM.General.UserControls.PagePreference)controlPagePreference;
+            phPagePreference.Controls.Add(pref);
+        }
+
+        private void fillRegistrationForm(int siteID)
+        {
+            DataTable dtFormData = AimResources.Collections.List2DataTable<AIM.Business.AimSiteNews.usp_Form_GetFormResult>(db.usp_Form_GetForm(config.siteID, null).ToList<AIM.Business.AimSiteNews.usp_Form_GetFormResult>());
+            rblForm.DataSource = dtFormData;
+
+            DataTable dtForm = dtFormData.Clone();
+
+            foreach (DataRow dr in dtFormData.Rows)
+            {
+
+                //special for Flats, AspelinRamm
+                if (dr["ObjectID"].ToString() == "6872")
+                {
+                    dr.Delete();
+                }
+                else if (dr["ObjectID"].ToString() != "")
+                {
+                    DataRow newRow = dtForm.NewRow();
+
+                    newRow.ItemArray = dr.ItemArray;
+                    dtForm.Rows.Add(newRow);
+                }
+            }
+
+            dtFormData.AcceptChanges();
+
+            if (dtFormData.Rows.Count >= 2)
+            {
+                rblForm.DataSource = dtForm;
+                rblForm.DataTextField = "FormName";
+                rblForm.DataValueField = "FormID";
+                rblForm.DataBind();
+            }
+
+            rblForm.DataTextField = "FormName";
+            rblForm.DataValueField = "FormID";
+            rblForm.DataBind();
+        }
+
+        protected void btSave_OnClick(object sender, System.EventArgs e)
+        {
+            //string topic = this.tbTopic.Text;
+            string text = editor1.Content;
+
+            //SecureEditing needs a new hyperlink
+            if (config.secureEditing != null && config.secureEditing != "")
+                text = text.Replace(config.customerpath + config.secureEditing, config.secureEditing);
+
+            AIM.Business.AimSiteNews.Object theObject;
+
+            bool shouldSendMail = false;
+
+            if (textID == 0)
+            {
+                theObject = new AIM.Business.AimSiteNews.Object();
+                db.Objects.InsertOnSubmit(theObject);
+                theObject.Created = DateTime.Now;
+                shouldSendMail = true;
+            }
+            else
+                theObject = (from linq_obj in db.Objects where linq_obj.ObjectID == textID select linq_obj).First<AIM.Business.AimSiteNews.Object>();
+
+            theObject.Title = tbTopic.Text;
+            theObject.HTMLContent = text;
+            theObject.ObjectTypeID = 3;
+            theObject.SiteID = config.siteID;
+            theObject.ObjectKey = AimResources.StringFunctions.GenerateRandomLowerCaseString(8);
+            theObject.ListID = ListID;
+            theObject.LangID = 1;
+            theObject.LastChanged = DateTime.Now;
+            theObject.IntroText = tbPreText.Text;
+
+            try
+            {
+            if (Boolean.Parse(Preference.getValue("news", "author", "used")))
+            {
+                AIM.Business.AimSiteNews.Admin AdminUser = (from linq_admin in db.Admins
+                                                           where linq_admin.ID == config.adminuserid &&
+                                                           linq_admin.siteID == config.siteID
+                                                           select linq_admin).First<AIM.Business.AimSiteNews.Admin>();
+                theObject.Structure = AdminUser.firstname + " " + AdminUser.lastname;
+            }
+            }
+            catch
+            {
+
+            }
+            
+            if (Boolean.Parse(Preference.getValue("news", "headnews", "used")) && cbHeadNews.Checked)
+                theObject.Category = 1;
+            else
+                theObject.Category = 0;
+
+            if (cbDeleteImage.Checked)
+            {
+                string filepath = Server.MapPath(config.customerpath + "news/images/" + theObject.UploadedImagePath);
+                File.Delete(filepath);
+                theObject.UploadedImagePath = "";
+            }
+            if (fuImageUploader.HasFile && fuImageUploader.PostedFile.ContentLength > 0)
+            {
+                //100112
+                try
+                {
+                    if (Boolean.Parse(Preference.getValue("news", "picture", "used")))
+                    {
+                        //spara nyheterna här
+
+                        DateTime now = DateTime.Now;
+
+                        string upFilename = fuImageUploader.PostedFile.FileName;
+                        int length = upFilename.Length;
+
+                        for(int i = 0; i < length; i++)
+                        {   
+                            if(upFilename.Contains("\\"))
+                            {
+                                upFilename = upFilename.Remove(0, fuImageUploader.PostedFile.FileName.IndexOf("\\"));
+                            }
+                        }
+
+                        string objectimagefilename = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + upFilename;
+
+                        theObject.Picture = objectimagefilename;
+                        theObject.UploadedImagePath = objectimagefilename;                        
+
+                        string newsFolder = config.objectimagepath.Replace("ObjectImages/", "news/images/");
+
+                        fuImageUploader.SaveAs(Server.MapPath(newsFolder + objectimagefilename));
+                        
+                        //fuImageUploader.SaveAs(Server.MapPath(newsFolder + "small/" + "resized_" + objectimagefilename));
+                        
+                        AimResources.ImageHandler.ResizeImageBox(Server.MapPath(newsFolder), Server.MapPath(newsFolder + "small/"), objectimagefilename, "resized_" + objectimagefilename, int.Parse(Preference.getValue("photoalbum", "imagesize_slideshow", "width")), int.Parse(Preference.getValue("photoalbum", "imagesize_slideshow", "height")), false);
+                    }
+                    else
+                    {
+
+                        DateTime now = DateTime.Now;
+                        string objectimagefilename = now.Year.ToString() + now.Month.ToString() + now.Day.ToString() + AimResources.StringFunctions.GenerateRandomLowerCaseString(6) + Path.GetExtension(fuImageUploader.PostedFile.FileName);
+                        fuImageUploader.SaveAs(Server.MapPath(config.objectimagepath + objectimagefilename));
+
+                        theObject.UploadedImagePath = objectimagefilename;
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+            
+            db.SubmitChanges();
+
+            // Send a mail if the content has been changed
+            if (shouldSendMail)
+            {
+                //sendMail(theObject.ObjectID);
+            }
+
+            //if (textID == 0)
+            //    textID = (from linq_obj in db.Objects
+            //              where linq_obj.ObjectTypeID == 3 &&
+            //                  linq_obj.SiteID == config.siteID &&
+            //                  linq_obj.Title == tbTopic.Text &&
+            //                  linq_obj.ListID == ListID
+            //              select linq_obj.ObjectID).First<int>();
+
+            textID = theObject.ObjectID;
+            
+            if (Boolean.Parse(Preference.getValue("news", "registration", "used")))
+            {
+                if (rblRegistration.SelectedValue == "Ja")
+                    saveRegistrationValues(textID, Convert.ToInt32(rblForm.SelectedValue));
+                else
+                    saveRegistrationValues(textID, 0);                
+            }
+
+
+            pref.savePreference(textID, false);
+
+            Response.Redirect("/Apps/AimSiteNews/Overview.aspx?status=finish&oID=" + ListID.ToString());
+        }
+
+        private void saveRegistrationValues(int objectID, int formID)
+        {
+            db.usp_Registration_SaveObjectForm(objectID, formID);
+        }
+
+        private void setPreference(int id)
+        {
+            pref.viewMeta = false;
+            pref.viewSaveButton = false;
+            pref.viewUrl = false;            
+
+            pref.viewPublishFrom = Boolean.Parse(Preference.getValue("news", "publishfrom", "used"));
+            pref.viewPublishTo = Boolean.Parse(Preference.getValue("news", "publishto", "used"));
+
+            if (id != 0)
+                pref.setObjectID(id);
+
+            pref.init();
+        }        
+
+        private void getRegistrationValues(int objectID)
+        {
+            var reg = db.usp_Registration_GetObjectForm(objectID);
+            
+            if (reg.Count<AIM.Business.AimSiteNews.usp_Registration_GetObjectFormResult>() > 0)
+            {
+                AIM.Business.AimSiteNews.usp_Registration_GetObjectFormResult theForm = reg.First<AIM.Business.AimSiteNews.usp_Registration_GetObjectFormResult>();
+                
+                if (theForm.FormID == 0)
+                    rblRegistration.SelectedValue = "Nej";
+                else
+                {
+                    rblRegistration.SelectedValue = "Ja";
+                    rblForm.SelectedValue = theForm.FormID.ToString();
+                }
+            }
+        }
+
+        private void sendMail(int oID)
+        {
+            string from_email = "noreply@aimit.se";
+
+            bool isBodyHtml = false;
+
+            AIM.Business.AimSiteNews.Site theSite = (from linq_site in db.Sites
+                                                 where linq_site.SiteID == config.siteID
+                                                 select linq_site).First<AIM.Business.AimSiteNews.Site>();
+
+            string subject = Language.getValue("MailNotificationSubject") + theSite.SiteName;
+
+            AIM.Business.AimSiteNews.Admin theAdmin = (from linq_admin in db.Admins
+                                                   where linq_admin.ID == config.adminuserid &&
+                                                   linq_admin.siteID == config.siteID
+                                                   select linq_admin).First<AIM.Business.AimSiteNews.Admin>();
+
+            string from_name = theAdmin.firstname + " " + theAdmin.lastname;
+
+            String body = Language.getValue("MailNotificationUser") + from_name;
+
+            AIM.Business.AimSiteNews.Object theObject = (from linq_object in db.Objects
+                                                     where linq_object.ObjectID == oID &&
+                                                     linq_object.SiteID == config.siteID
+                                                     select linq_object).First<AIM.Business.AimSiteNews.Object>();
+
+            body += Language.getValue("MailNotificationHasAddedNews") + theObject.Title + ".";
+
+            IEnumerable<string> emails = (from linq_emails in db.Admins
+                                          where linq_emails.siteID == config.siteID &&
+                                                linq_emails.mailNotifications == 1 &&
+                                                linq_emails.email != null &&
+                                                linq_emails.email != ""
+                                          select linq_emails.email).AsEnumerable<string>();
+
+            foreach (string to_email in emails)
+            {
+                AimResources.Mail.sendMail(to_email, from_email, isBodyHtml, subject, body);
+            }
+        }
+    }
+}

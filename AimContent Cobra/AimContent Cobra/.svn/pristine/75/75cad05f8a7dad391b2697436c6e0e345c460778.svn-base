@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Uppladdning av produkter" />
+  <contentdescription value="Här laddas Excelfil upp med strukturen för produkter. Observera att det kan ta lång tid att köra scriptet och det är viktigt att detta får köra klart innan sidan stängs ner annars finns risk att strukturen blir korrupt." />
+  <btnImport value = "Importera" />
+</language>

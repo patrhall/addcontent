@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Nyhetsbrev" />
+  <contentdescription value="Här visas en lista på alla dina nyhetsbrev. Dessa går att redigera, ta bort och även skapa nya nyhetsbrev." />
+  <noRecordText value="Nyhetsbrev saknas" />
+  <lbNewMail value="Skapa nytt nyhetsbrev" />
+  <newMailTooltip value="Nytt nyhetsbrev" />
+  <DelMailConfirm value="Ta bort nyhetsbrev. Är du säker?" />
+  <btSave value="Spara" />
+
+  <LastDateColumnHeader value="Senaste utskick" />
+  <notSendText value="Ej skickat" />
+  
+  <mailSendStatus value="Nyhetsbrev skickat" />
+</language>

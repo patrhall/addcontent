@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Skapa / redigera nyheter" />
+  <contentdescription value="Här kan du skapa och redigera nyheter till sidan." />
+  <lblMailNotificationSubject value="Ny nyhet på webbsidan " />
+  <lblMailNotificationUser value="Användaren " />
+  <lblMailNotificationHasAddedNews value=" har lagt till nyheten " />
+  
+</language>

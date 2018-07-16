@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>	
+	<contenttitle value="Administratörer" />
+	<contentdescription value="Här har du en överblick på personer som har tillgång till administrationen." />
+	<lbNewAdmin value="Skapa ny administratör" />
+  <DelAdminConfirm value="Ta bort administratör. Är du säker?" />
+  <lblFormUserName value="Användarnamn" />
+  <lblFormPassword value="Lösenord" />
+  <lblFormNameFirst value="Förnamn" />
+  <lblFormNamelast value="Efternamn" />
+  <lblFormEmail value="E-postadress" />
+  <reqFirstName value="Du måste ange förnamn" />
+  <reqLastName value="Du måste ange efternamn" />
+  <reqPassword value="Du måste ange ett lösenord" />
+  <reqUserName value="Du måste ange ett användarnamn" />
+  <btSave value="Spara" />
+  <lblFormTitle_new value="Skapa ny administratör" />
+  <lblFormTitle_edit value="Redigera administratör" />
+  <rgAdministrators_username value="Användarnamn" />
+  <rgAdministrators_name value="Namn" />
+  <rgAdministrators_email value="E-post" />
+  <lblAdminLanguage value="Språk" />
+  <lblUserGroup value="Användargrupp" />
+  <lblMailNotifications value="Mailnotifieringar" />
+  <lblCbxMailNotifications value="Erhåll" />
+
+
+  <language1 value="Svenska" />
+  <language2 value="Engelska" />
+</language>

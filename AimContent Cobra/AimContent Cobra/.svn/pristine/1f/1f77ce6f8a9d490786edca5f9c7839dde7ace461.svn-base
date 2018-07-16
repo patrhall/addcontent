@@ -1,0 +1,50 @@
+﻿/* THIS IS USED IN ALL MODULES */
+
+table
+{
+	border-width:0px;
+	color:Black;
+}
+
+img
+{
+	border:0px;
+}
+
+/* STYLES */
+.align_topleft
+{
+	vertical-align:top;
+	text-align:left;
+}
+
+.align_middleleft
+{
+	vertical-align:middle;
+	text-align:left;
+}
+
+.align_middleright
+{
+	vertical-align:middle;
+	text-align:right;
+}
+
+.mouselink
+{
+	cursor:pointer;
+}
+
+img.textimage
+{
+	vertical-align:middle;
+}
+
+/* GENERAL PROPERTIES */
+#propertiespanel
+{
+	width:80%;
+	background-color:White;
+	padding:1px 5px 5px 5px;
+	margin:5px 5px 5px 5px;
+}

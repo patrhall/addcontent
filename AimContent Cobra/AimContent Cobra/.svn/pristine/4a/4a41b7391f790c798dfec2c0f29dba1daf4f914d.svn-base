@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Group>
+    <Item Value="new" Text="New page" />
+    <Item PostBack="false" Text="Rename" />
+    <Item Value="moveup" Text="Move up" />
+    <Item Value="movedown" Text="Move down" />
+    <Item Value="widgets" Text="Widgets" />
+    <Item Value="changeObjectType" Text="Change page type" />
+    <Item Value="erase" Text="Remove" />
+  </Group>
+</Menu>

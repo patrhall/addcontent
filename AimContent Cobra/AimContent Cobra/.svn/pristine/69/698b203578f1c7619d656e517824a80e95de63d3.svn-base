@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AimContent" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=aimit1;Initial Catalog=AimContent;User ID=aimcontent" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="AimContentConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Articles_Procedural" Member="Articles_Procedurals">
+    <Type Name="Articles_Procedural">
+      <Column Name="ArticleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Rubrik" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Paket" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Grupp" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Bild" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Pris" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LagerSaldo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ObjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tid" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

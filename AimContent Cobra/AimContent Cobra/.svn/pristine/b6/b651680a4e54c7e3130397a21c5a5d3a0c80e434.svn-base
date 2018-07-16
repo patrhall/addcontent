@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Redigering av sida" />
+  <contentdescription value="Här kan du ändra sidans innehåll. Om du vill ändra några egenskaper för sidan, t.ex. titel eller vilka den ska visas för klickar du på sidegenskaper." />
+  <lbPreference value="Redigera sidegenskaper" />
+  <bRoleConfirm value="Spara" />
+  <lblPreview value="Förhandsgranska" />
+  <lblMailNotificationSubject value="Ändringar på webbsidan " />
+  <lblMailNotificationUser value="Användaren " />
+  <lblMailNotificationHasChangedPage value=" har gjort ändringar på sidan " />
+</language>

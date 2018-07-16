@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Kalender" />
+  <contentdescription value="Välj den kategori som du vill lägga till en händelse för.
+                      Klicka sedan på den lilla vita ikonen som kommer upp till höger om rulllisten för att lägga in en ny händelse.
+                      Vill du redigera en redan befintlig händelse så klickar du på det aktuella datumet i kalendern så kommer det upp en lista under kalendern med alla aktuella händelser för det datumet." />
+</language>

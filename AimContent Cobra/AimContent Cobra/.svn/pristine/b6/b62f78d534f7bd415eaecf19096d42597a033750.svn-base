@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <trashNodeText value="Senast borttagna sidor" />
+  <newpage value="Ny sida" />
+  <rootobject value="Hemsiderot" />
+  <language1 value="Svenska" />
+  <language2 value="Engelska" />
+  <language3 value="Koreanska" />
+  <language4 value="Thailändska" />
+  <language5 value="Norska" />
+  <language6 value="Tyska" />
+  <language7 value="Italienska" />
+  <language8 value="Franska" />
+  <language9 value="Finska" />
+  <language10 value="Danska" />
+  <language11 value="Spanska" />
+  <language12 value="Portugisiska" />
+  <rootWidgetNodeText value="Puffar" />
+</language>

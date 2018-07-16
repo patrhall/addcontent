@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Mekpoint" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=aimit1;Initial Catalog=Mekpoint;Persist Security Info=True;User ID=sa" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="MekpointConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Agency" Member="Agencies">
+    <Type Name="Agency">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UrlText" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MagazineArticleType" Member="MagazineArticleTypes">
+    <Type Name="MagazineArticleType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="MagazineArticleType_MagazineArticle" Member="MagazineArticles" ThisKey="Id" OtherKey="MagazineArticleType_FK" Type="MagazineArticle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Company" Member="Companies">
+    <Type Name="Company">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(280)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="CompanyCategory_FK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CompanyCategory_Company" Member="CompanyCategory" ThisKey="CompanyCategory_FK" OtherKey="Id" Type="CompanyCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyCategory" Member="CompanyCategories">
+    <Type Name="CompanyCategory">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="CompanyCategory_Company" Member="Companies" ThisKey="Id" OtherKey="CompanyCategory_FK" Type="Company" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MagazineArticle" Member="MagazineArticles">
+    <Type Name="MagazineArticle">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ObjectId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Magazine_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MagazineArticleType_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MagazineArticleType_MagazineArticle" Member="MagazineArticleType" ThisKey="MagazineArticleType_FK" OtherKey="Id" Type="MagazineArticleType" IsForeignKey="true" />
+      <Association Name="Magazine_MagazineArticle" Member="Magazine" ThisKey="Magazine_FK" OtherKey="Id" Type="Magazine" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Magazine" Member="Magazines">
+    <Type Name="Magazine">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Headline" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Pdf" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Pdf2" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Pdf3" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Html" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Association Name="Magazine_MagazineArticle" Member="MagazineArticles" ThisKey="Id" OtherKey="Magazine_FK" Type="MagazineArticle" />
+    </Type>
+  </Table>
+</Database>

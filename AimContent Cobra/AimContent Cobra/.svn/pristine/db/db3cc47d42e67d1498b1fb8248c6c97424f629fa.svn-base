@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Aimit_Aim" Class="DataObjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AIMITUTV3;Initial Catalog=Aimit_Aim;Integrated Security=True" SettingsObjectName="AIM.Business.Properties.Settings" SettingsPropertyName="Aimit_AimConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Form_Alternatives" Member="Form_Alternatives">
+    <Type Name="Form_Alternative">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuestionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FormID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SectionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AlternativeText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="QuestionType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AlternativeType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Point" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Jump" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupKey" Type="System.String" DbType="NChar(15)" CanBeNull="true" />
+      <Column Name="Correct" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_Section" Member="Form_Sections">
+    <Type Name="Form_Section">
+      <Column Name="SectionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FormID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SectionHeader" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SectionText" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Sort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_Settings" Member="Form_Settings">
+    <Type Name="Form_Setting">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ObjectID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SurveyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Frequency" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Object_Form_Setting" Member="Object" ThisKey="ObjectID" Type="Object" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_Users" Member="Form_Users">
+    <Type Name="Form_User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ResponderID" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FormID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageIndex" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RegisterDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CompleteDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SectionsStarted" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SectionsCompleted" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BluePrint" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ObjectsInRoles" Member="ObjectsInRoles">
+    <Type Name="ObjectsInRole">
+      <Column Name="ObjectID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Object_ObjectsInRole" Member="Object" ThisKey="ObjectID" Type="Object" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_Mail" Member="Form_Mails">
+    <Type Name="Form_Mail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FormID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FromMail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Object" Member="Objects">
+    <Type Name="Object">
+      <Column Name="ObjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Structure" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IntroText" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="HTMLContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MetaTitle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MetaKeywords" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="MetaDescription" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastChanged" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Sortorder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Picture" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Alt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="ObjectTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LangID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ObjectKey" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ListID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PublishFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PublishTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LinkTarget" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Visits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SecureObject" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TrashedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UploadedImagePath" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="VisibleInMenu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Object_Form_Setting" Member="Form_Settings" OtherKey="ObjectID" Type="Form_Setting" />
+      <Association Name="Object_ObjectsInRole" Member="ObjectsInRoles" OtherKey="ObjectID" Type="ObjectsInRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_Responder" Member="Form_Responders">
+    <Type Name="Form_Responder">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Form_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Form_Responder_Form_ExternalConnections_ReturnValue" Member="Form_ExternalConnections_ReturnValues" OtherKey="Responder_FK" Type="Form_ExternalConnections_ReturnValue" />
+      <Association Name="Form_Responder_Form_Answer" Member="Form_Answers" OtherKey="Form_Responder_FK" Type="Form_Answer" />
+      <Association Name="Form_Form_Form_Responder" Member="Form_Form" ThisKey="Form_FK" Type="Form_Form" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="db_owner.Form_ExternalConnections" Member="Form_ExternalConnections">
+    <Type Name="Form_ExternalConnection">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Site_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Form_ExternalConnection_Form_ExternalConnections_Property" Member="Form_ExternalConnections_Properties" OtherKey="ExternalConnection_FK" Type="Form_ExternalConnections_Property" />
+      <Association Name="Form_ExternalConnection_Form_ExternalConnections_ReturnProperty" Member="Form_ExternalConnections_ReturnProperties" OtherKey="ExternalConnection_FK" Type="Form_ExternalConnections_ReturnProperty" />
+      <Association Name="Form_ExternalConnection_Form_Form" Member="Form_Forms" OtherKey="ExternalConnection_FK" Type="Form_Form" />
+    </Type>
+  </Table>
+  <Table Name="db_owner.Form_ExternalConnections_Properties" Member="Form_ExternalConnections_Properties">
+    <Type Name="Form_ExternalConnections_Property">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ExternalConnection_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Form_ExternalConnections_Property_Form_ExternalConnections_Value" Member="Form_ExternalConnections_Values" OtherKey="ExternalConnection_Property_FK" Type="Form_ExternalConnections_Value" />
+      <Association Name="Form_ExternalConnection_Form_ExternalConnections_Property" Member="Form_ExternalConnection" ThisKey="ExternalConnection_FK" Type="Form_ExternalConnection" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="db_owner.Form_ExternalConnections_ReturnProperties" Member="Form_ExternalConnections_ReturnProperties">
+    <Type Name="Form_ExternalConnections_ReturnProperty">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ExternalConnection_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Form_ExternalConnections_ReturnProperty_Form_ExternalConnections_ReturnValue" Member="Form_ExternalConnections_ReturnValues" OtherKey="ReturnProperty_FK" Type="Form_ExternalConnections_ReturnValue" />
+      <Association Name="Form_ExternalConnection_Form_ExternalConnections_ReturnProperty" Member="Form_ExternalConnection" ThisKey="ExternalConnection_FK" Type="Form_ExternalConnection" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="db_owner.Form_ExternalConnections_ReturnValues" Member="Form_ExternalConnections_ReturnValues">
+    <Type Name="Form_ExternalConnections_ReturnValue">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ReturnProperty_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Form_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Responder_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Form_ExternalConnections_ReturnProperty_Form_ExternalConnections_ReturnValue" Member="Form_ExternalConnections_ReturnProperty" ThisKey="ReturnProperty_FK" Type="Form_ExternalConnections_ReturnProperty" IsForeignKey="true" />
+      <Association Name="Form_Responder_Form_ExternalConnections_ReturnValue" Member="Form_Responder" ThisKey="Responder_FK" Type="Form_Responder" IsForeignKey="true" />
+      <Association Name="Form_Form_Form_ExternalConnections_ReturnValue" Member="Form_Form" ThisKey="Form_FK" Type="Form_Form" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="db_owner.Form_ExternalConnections_Values" Member="Form_ExternalConnections_Values">
+    <Type Name="Form_ExternalConnections_Value">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ExternalConnection_Property_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Form_Form_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Form_ExternalConnections_Property_Form_ExternalConnections_Value" Member="Form_ExternalConnections_Property" ThisKey="ExternalConnection_Property_FK" Type="Form_ExternalConnections_Property" IsForeignKey="true" />
+      <Association Name="Form_Form_Form_ExternalConnections_Value" Member="Form_Form" ThisKey="Form_Form_FK" Type="Form_Form" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_Form" Member="Form_Forms">
+    <Type Name="Form_Form">
+      <Column Name="FormID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FormName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FormText" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ObjectID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExternalConnection_FK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExternalConnectionEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeleteDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Form_Form_Form_Responder" Member="Form_Responders" OtherKey="Form_FK" Type="Form_Responder" />
+      <Association Name="Form_Form_Form_ExternalConnections_ReturnValue" Member="Form_ExternalConnections_ReturnValues" OtherKey="Form_FK" Type="Form_ExternalConnections_ReturnValue" />
+      <Association Name="Form_Form_Form_ExternalConnections_Value" Member="Form_ExternalConnections_Values" OtherKey="Form_Form_FK" Type="Form_ExternalConnections_Value" />
+      <Association Name="Form_ExternalConnection_Form_Form" Member="Form_ExternalConnection" ThisKey="ExternalConnection_FK" Type="Form_ExternalConnection" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_Question" Member="Form_Questions">
+    <Type Name="Form_Question">
+      <Column Name="QuestionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SectionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FormID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QuestionType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QuestionText" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MainQuestionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AlternativesMax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Interval" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Back" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Required" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_Answer" Member="Form_Answers">
+    <Type Name="Form_Answer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ResponderID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AlternativeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AlternativeText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AlternativeType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Point" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QuestionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SectionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FormID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Completed" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Last" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Form_Responder_FK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Form_Responder_Form_Answer" Member="Form_Responder" ThisKey="Form_Responder_FK" Type="Form_Responder" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

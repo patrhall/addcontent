@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <importbuttonText value="Importera" />
+  <selectbuttonText value="Välj fil" />
+  
+  <contenttitle value="Import av mottagare" />
+  <contentdescription value="Här kan listor från Excel med mottagare importeras till gruppen. Observera att Excel-filen måste vara utformad enligt mall." />
+  <templateText value="Malldokument kan laddas ner här:" />
+</language>

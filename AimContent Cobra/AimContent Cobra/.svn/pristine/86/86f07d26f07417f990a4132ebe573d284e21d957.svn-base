@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <contenttitle value="Create link" />
+  <contentdescription value="Here you can create a link to a page on the internet. If the page belongs to the website you can click internal link, otherwise it will be opened in a new window" />
+  <lbPreference value="Edit page settings" />
+  <rblListType_Extern_Text value="External link (open in new window)" />
+  <rblListType_Internal_Text value="Internal link (open in same window)" />
+	<rblListType_Relative_Text value="Relative link (open in same window)" />	
+  <saveButtonText value="Save Link" />
+  <dropDownRelativeLinkText value="Relative link" />
+</language>

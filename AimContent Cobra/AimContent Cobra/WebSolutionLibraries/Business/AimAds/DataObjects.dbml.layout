@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataObjects">
+  <DataContextMoniker Name="/DataObjectsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="800d1c12-71bf-4bbc-9be3-e31e4f8647e1" absoluteBounds="0.75, 0.5, 2, 1.0961531575520835">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimAds_Direction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4318a474-1db5-4bea-8025-9a814345e15e" absoluteBounds="0.765, 0.96, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="792a54d1-deab-4d0f-a2b2-2c5ad3e87379" absoluteBounds="3.125, 0.5, 2, 2.4109318033854166">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimAds_Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="385ffdb5-0183-438c-9d88-1ac49ad144bb" absoluteBounds="3.1399999999999997, 0.96, 1.9700000000000002, 1.8509318033854165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.04807657877604); (3.125 : 1.04807657877604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimAds_Direction/AimAds_Direction_AimAds_Group" />
+      <nodes>
+        <classShapeMoniker Id="800d1c12-71bf-4bbc-9be3-e31e4f8647e1" />
+        <classShapeMoniker Id="792a54d1-deab-4d0f-a2b2-2c5ad3e87379" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dc9ad9d7-6202-4a33-877b-513c88ebb2bd" absoluteBounds="5.5, 0.5, 2, 3.5613631184895826">
+      <DataClassMoniker Name="/DataObjectsDataContext/AimAds_Item" />
+      <nestedChildShapes>
+        <elementListCompartment Id="34b52592-060a-4179-9951-0a059280f12c" absoluteBounds="5.515, 0.96, 1.9700000000000002, 3.001363118489583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.125 : 1.70546590169271); (5.5 : 1.70546590169271)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataObjectsDataContext/AimAds_Group/AimAds_Group_AimAds_Item" />
+      <nodes>
+        <classShapeMoniker Id="792a54d1-deab-4d0f-a2b2-2c5ad3e87379" />
+        <classShapeMoniker Id="dc9ad9d7-6202-4a33-877b-513c88ebb2bd" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
